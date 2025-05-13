@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/204805194?s=400&u=94c84f1870797a1161db4523ab8d08487aeadf3a&v=4"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="前期准备
+
+准备好一个域名，一个github账号（没有请自行注册）  
+wbehostmost [项目地址](https://github.com/banfeng-git/Webhostmost-ws-nodejs) 
+[github保活项目地址](https://github.com/banfeng-git/webhost)  
+教程开始  
+注册购买篇  
+首先访问 [webhostmost](https://www.webhostmost.com/free-web-hosting) 点击Start For Free  
+[![](https://free4.yunpng.top/2025/04/30/6811ca8c773c8.png)](https://free4.yunpng.top/2025/04/30/6811ca8c773c8.png)  
+再选择I already own a Domain下面的域名随便填写然后点击use  
+[![](https://free4.yunpng.top/2025/04/30/6811cd25a8bcc.png)](https://free4.yunpng.top/2025/04/30/6811cd25a8bcc.png)  
+进入页面后选Server Location（服务器位置）看自己需要选择位置，选完后点击Conttinue  
+[![](https://free4.yunpng.top/2025/04/30/6811cfcd38e8d.png)](https://free4.yunpng.top/2025/04/30/6811cfcd38e8d.png)  
+跳转页面后往下拉填写注册信息除了邮箱和密码意外都可以用生成器生成，完成填写根据图片点击进行下一步  
+[![](https://free4.yunpng.top/2025/04/30/6811d2837c99d.png)](https://free4.yunpng.top/2025/04/30/6811d2837c99d.png)  
+结账后会出订单号上面会提示验证邮箱先到你邮箱里面去验证电子邮件随后点击Continue To Client Area就进入了登录界面输入你注册的账号密码登录即可此时账号注册过程结束  
+[![](https://free4.yunpng.top/2025/04/30/6811d5406a618.png)](https://free4.yunpng.top/2025/04/30/6811d5406a618.png)  
+部署篇  
+登陆后即可看到服务器信息，点击 Go To Control Panel 跳转到后台管理页面，点击左栏 Domain Management ➡Domain Setup➡勾选域名➡点击Delete删除域名➡出现弹窗勾选Delete web data在点Confirm就删除掉了  
+[![](https://free4.yunpng.top/2025/04/30/6811d79150326.png)](https://free4.yunpng.top/2025/04/30/6811d79150326.png)  
+[![](https://free4.yunpng.top/2025/04/30/6811d9ef19eed.png)](https://free4.yunpng.top/2025/04/30/6811d9ef19eed.png)  
+删除完成后在Domain出填写自己域名并解析好ip（ip在登录时后的服务器信息里面）➡点击Create保存域名  
+[![](https://free4.yunpng.top/2025/04/30/6811dcafb6d9a.png)](https://free4.yunpng.top/2025/04/30/6811dcafb6d9a.png)  
+下一步部署ssl依次点击Security Management➡SSL Certificates➡选择Get automatic certificate from ACME Provider➡勾选Force SSL with https redirect➡Save  
+[![](https://free4.yunpng.top/2025/04/30/6811e1bfe5999.png)](https://free4.yunpng.top/2025/04/30/6811e1bfe5999.png)  
+随后点击点击左栏 Files Management ➡File Management➡domains➡xxx.xxxxx.com➡public\_html. 将项目中的 app.js 和 package.json 上传到此目录下即可  
+
+[![](https://free4.yunpng.top/2025/04/30/6811e264e17d6.png)](https://free4.yunpng.top/2025/04/30/6811e264e17d6.png)  
+[![](https://free4.yunpng.top/2025/04/30/6811e2e778efd.png)](https://free4.yunpng.top/2025/04/30/6811e2e778efd.png)  
+下一步回到面板点击左栏 Website Management➡NodeJs APP➡Create application➡CREATE先看图  
+Node.js version➡v22  
+Application root➡domains/xxx.xxxx.com/public\_html (替换自己的完整域名)切记不要填写错误  
+Application startup file➡app.js  
+点击Add variable添加环境变量  
+DOMAIN➡你的域名  
+PORT ➡端口（自己随便填写别人没用过的端口）  
+UUID➡生成的uuid  
+NEZHA\_SERVER➡哪吒探针地址（没有可以不填）  
+NEZHA\_PORT ➡哪吒探针端口（没有可以不填）  
+NEZHA\_KEY➡哪吒探针密钥（没有可以不填）  
+[![](https://free4.yunpng.top/2025/04/30/6811e69dd76a0.png)](https://free4.yunpng.top/2025/04/30/6811e69dd76a0.png)  
+[![](https://free4.yunpng.top/2025/04/30/6811e9a952dd9.png)](https://free4.yunpng.top/2025/04/30/6811e9a952dd9.png)  
+此时创建完成 Node.js 应用后往下翻点击Run NPM install等待执行完毕  
+[![](https://free4.yunpng.top/2025/05/03/681593de18f58.png)](https://free4.yunpng.top/2025/05/03/681593de18f58.png)  
+等待完毕后点击 Run JS script弹出界面后点击start再点击Run JS script即可  
+[![](https://free4.yunpng.top/2025/04/30/6811f078abee8.png)](https://free4.yunpng.top/2025/04/30/6811f078abee8.png)  
+[![](https://free4.yunpng.top/2025/04/30/6811f0b83fd02.png)](https://free4.yunpng.top/2025/04/30/6811f0b83fd02.png)  
+这时输入你的域名 /sub 即可获取节点如xxxx.xom/sub 并访问得到类似于dmxlc3M6Ly9iMmU3ODcwYi1mZGE1LTQzMGQtYmNhMC00ZjNmYTdlZjIwM2NAdnAuemhpeXUudXMua2c6NDQzP2VuY3J5cHRpb249bm9uZSZzZWN1cml0eT10bHMmc这样的将他导入到v2中在设置一下跳过脸书认证就可以了  
+如果访问是503请更换端口或检查有无错误换端口请重新点击Run JS script  
+github保活篇
+
+[点击进入github查看教程](https://github.com/banfeng-git/webhost)  
+。">
+<meta property="og:title" content="Webhostmost 部署vless+github保号">
+<meta property="og:description" content="前期准备
+
+准备好一个域名，一个github账号（没有请自行注册）  
+wbehostmost [项目地址](https://github.com/banfeng-git/Webhostmost-ws-nodejs) 
+[github保活项目地址](https://github.com/banfeng-git/webhost)  
+教程开始  
+注册购买篇  
+首先访问 [webhostmost](https://www.webhostmost.com/free-web-hosting) 点击Start For Free  
+[![](https://free4.yunpng.top/2025/04/30/6811ca8c773c8.png)](https://free4.yunpng.top/2025/04/30/6811ca8c773c8.png)  
+再选择I already own a Domain下面的域名随便填写然后点击use  
+[![](https://free4.yunpng.top/2025/04/30/6811cd25a8bcc.png)](https://free4.yunpng.top/2025/04/30/6811cd25a8bcc.png)  
+进入页面后选Server Location（服务器位置）看自己需要选择位置，选完后点击Conttinue  
+[![](https://free4.yunpng.top/2025/04/30/6811cfcd38e8d.png)](https://free4.yunpng.top/2025/04/30/6811cfcd38e8d.png)  
+跳转页面后往下拉填写注册信息除了邮箱和密码意外都可以用生成器生成，完成填写根据图片点击进行下一步  
+[![](https://free4.yunpng.top/2025/04/30/6811d2837c99d.png)](https://free4.yunpng.top/2025/04/30/6811d2837c99d.png)  
+结账后会出订单号上面会提示验证邮箱先到你邮箱里面去验证电子邮件随后点击Continue To Client Area就进入了登录界面输入你注册的账号密码登录即可此时账号注册过程结束  
+[![](https://free4.yunpng.top/2025/04/30/6811d5406a618.png)](https://free4.yunpng.top/2025/04/30/6811d5406a618.png)  
+部署篇  
+登陆后即可看到服务器信息，点击 Go To Control Panel 跳转到后台管理页面，点击左栏 Domain Management ➡Domain Setup➡勾选域名➡点击Delete删除域名➡出现弹窗勾选Delete web data在点Confirm就删除掉了  
+[![](https://free4.yunpng.top/2025/04/30/6811d79150326.png)](https://free4.yunpng.top/2025/04/30/6811d79150326.png)  
+[![](https://free4.yunpng.top/2025/04/30/6811d9ef19eed.png)](https://free4.yunpng.top/2025/04/30/6811d9ef19eed.png)  
+删除完成后在Domain出填写自己域名并解析好ip（ip在登录时后的服务器信息里面）➡点击Create保存域名  
+[![](https://free4.yunpng.top/2025/04/30/6811dcafb6d9a.png)](https://free4.yunpng.top/2025/04/30/6811dcafb6d9a.png)  
+下一步部署ssl依次点击Security Management➡SSL Certificates➡选择Get automatic certificate from ACME Provider➡勾选Force SSL with https redirect➡Save  
+[![](https://free4.yunpng.top/2025/04/30/6811e1bfe5999.png)](https://free4.yunpng.top/2025/04/30/6811e1bfe5999.png)  
+随后点击点击左栏 Files Management ➡File Management➡domains➡xxx.xxxxx.com➡public\_html. 将项目中的 app.js 和 package.json 上传到此目录下即可  
+
+[![](https://free4.yunpng.top/2025/04/30/6811e264e17d6.png)](https://free4.yunpng.top/2025/04/30/6811e264e17d6.png)  
+[![](https://free4.yunpng.top/2025/04/30/6811e2e778efd.png)](https://free4.yunpng.top/2025/04/30/6811e2e778efd.png)  
+下一步回到面板点击左栏 Website Management➡NodeJs APP➡Create application➡CREATE先看图  
+Node.js version➡v22  
+Application root➡domains/xxx.xxxx.com/public\_html (替换自己的完整域名)切记不要填写错误  
+Application startup file➡app.js  
+点击Add variable添加环境变量  
+DOMAIN➡你的域名  
+PORT ➡端口（自己随便填写别人没用过的端口）  
+UUID➡生成的uuid  
+NEZHA\_SERVER➡哪吒探针地址（没有可以不填）  
+NEZHA\_PORT ➡哪吒探针端口（没有可以不填）  
+NEZHA\_KEY➡哪吒探针密钥（没有可以不填）  
+[![](https://free4.yunpng.top/2025/04/30/6811e69dd76a0.png)](https://free4.yunpng.top/2025/04/30/6811e69dd76a0.png)  
+[![](https://free4.yunpng.top/2025/04/30/6811e9a952dd9.png)](https://free4.yunpng.top/2025/04/30/6811e9a952dd9.png)  
+此时创建完成 Node.js 应用后往下翻点击Run NPM install等待执行完毕  
+[![](https://free4.yunpng.top/2025/05/03/681593de18f58.png)](https://free4.yunpng.top/2025/05/03/681593de18f58.png)  
+等待完毕后点击 Run JS script弹出界面后点击start再点击Run JS script即可  
+[![](https://free4.yunpng.top/2025/04/30/6811f078abee8.png)](https://free4.yunpng.top/2025/04/30/6811f078abee8.png)  
+[![](https://free4.yunpng.top/2025/04/30/6811f0b83fd02.png)](https://free4.yunpng.top/2025/04/30/6811f0b83fd02.png)  
+这时输入你的域名 /sub 即可获取节点如xxxx.xom/sub 并访问得到类似于dmxlc3M6Ly9iMmU3ODcwYi1mZGE1LTQzMGQtYmNhMC00ZjNmYTdlZjIwM2NAdnAuemhpeXUudXMua2c6NDQzP2VuY3J5cHRpb249bm9uZSZzZWN1cml0eT10bHMmc这样的将他导入到v2中在设置一下跳过脸书认证就可以了  
+如果访问是503请更换端口或检查有无错误换端口请重新点击Run JS script  
+github保活篇
+
+[点击进入github查看教程](https://github.com/banfeng-git/webhost)  
+。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://MaryCHobbs.github.io/post/Webhostmost%20-bu-shu-vless%2Bgithub-bao-hao.html">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/204805194?s=400&u=94c84f1870797a1161db4523ab8d08487aeadf3a&v=4">
+<title>Webhostmost 部署vless+github保号</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">Webhostmost 部署vless+github保号</h1>
+<div class="title-right">
+    <a href="https://MaryCHobbs.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/MaryCHobbs/MaryCHobbs.github.io/issues/4" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><p>前期准备</p>
+<p>准备好一个域名，一个github账号（没有请自行注册）<br>
+wbehostmost <a href="https://github.com/banfeng-git/Webhostmost-ws-nodejs">项目地址</a><br>
+<a href="https://github.com/banfeng-git/webhost">github保活项目地址</a><br>
+教程开始<br>
+注册购买篇<br>
+首先访问 <a href="https://www.webhostmost.com/free-web-hosting" rel="nofollow">webhostmost</a> 点击Start For Free<br>
+<a href="https://free4.yunpng.top/2025/04/30/6811ca8c773c8.png" rel="nofollow"><img src="https://camo.githubusercontent.com/ff84d419d318fc81164b2675a7920bd4603662adfcf8a3f421c7da8d7f6fd92f/68747470733a2f2f66726565342e79756e706e672e746f702f323032352f30342f33302f363831316361386337373363382e706e67" alt="" data-canonical-src="https://free4.yunpng.top/2025/04/30/6811ca8c773c8.png" style="max-width: 100%;"></a><br>
+再选择I already own a Domain下面的域名随便填写然后点击use<br>
+<a href="https://free4.yunpng.top/2025/04/30/6811cd25a8bcc.png" rel="nofollow"><img src="https://camo.githubusercontent.com/81aa1da9f62627174c90eefe9662707ca9e01e3e21d41d25c0d7563c27a427f5/68747470733a2f2f66726565342e79756e706e672e746f702f323032352f30342f33302f363831316364323561386263632e706e67" alt="" data-canonical-src="https://free4.yunpng.top/2025/04/30/6811cd25a8bcc.png" style="max-width: 100%;"></a><br>
+进入页面后选Server Location（服务器位置）看自己需要选择位置，选完后点击Conttinue<br>
+<a href="https://free4.yunpng.top/2025/04/30/6811cfcd38e8d.png" rel="nofollow"><img src="https://camo.githubusercontent.com/4532706af1f0aa5f5e2afc080cbb072c8684738e032afe2d66d3dac094243060/68747470733a2f2f66726565342e79756e706e672e746f702f323032352f30342f33302f363831316366636433386538642e706e67" alt="" data-canonical-src="https://free4.yunpng.top/2025/04/30/6811cfcd38e8d.png" style="max-width: 100%;"></a><br>
+跳转页面后往下拉填写注册信息除了邮箱和密码意外都可以用生成器生成，完成填写根据图片点击进行下一步<br>
+<a href="https://free4.yunpng.top/2025/04/30/6811d2837c99d.png" rel="nofollow"><img src="https://camo.githubusercontent.com/314848a057bd5460a0ac02463edde22ae954c12263802e3dfa5b47e637a63624/68747470733a2f2f66726565342e79756e706e672e746f702f323032352f30342f33302f363831316432383337633939642e706e67" alt="" data-canonical-src="https://free4.yunpng.top/2025/04/30/6811d2837c99d.png" style="max-width: 100%;"></a><br>
+结账后会出订单号上面会提示验证邮箱先到你邮箱里面去验证电子邮件随后点击Continue To Client Area就进入了登录界面输入你注册的账号密码登录即可此时账号注册过程结束<br>
+<a href="https://free4.yunpng.top/2025/04/30/6811d5406a618.png" rel="nofollow"><img src="https://camo.githubusercontent.com/1e65377399d5cdc090d0781cc1ce09684bb7ac3c5dc7573fbae12efa9c489e0b/68747470733a2f2f66726565342e79756e706e672e746f702f323032352f30342f33302f363831316435343036613631382e706e67" alt="" data-canonical-src="https://free4.yunpng.top/2025/04/30/6811d5406a618.png" style="max-width: 100%;"></a><br>
+部署篇<br>
+登陆后即可看到服务器信息，点击 Go To Control Panel 跳转到后台管理页面，点击左栏 Domain Management ➡Domain Setup➡勾选域名➡点击Delete删除域名➡出现弹窗勾选Delete web data在点Confirm就删除掉了<br>
+<a href="https://free4.yunpng.top/2025/04/30/6811d79150326.png" rel="nofollow"><img src="https://camo.githubusercontent.com/9e339da1eb6332da51b16288a2953ef21d20b48de3ef0bda030b19c4e5c03f1b/68747470733a2f2f66726565342e79756e706e672e746f702f323032352f30342f33302f363831316437393135303332362e706e67" alt="" data-canonical-src="https://free4.yunpng.top/2025/04/30/6811d79150326.png" style="max-width: 100%;"></a><br>
+<a href="https://free4.yunpng.top/2025/04/30/6811d9ef19eed.png" rel="nofollow"><img src="https://camo.githubusercontent.com/fa53f9abfc2bf270db2a42375315aed8d6ba09b7d1d529f36106403dbc709ca0/68747470733a2f2f66726565342e79756e706e672e746f702f323032352f30342f33302f363831316439656631396565642e706e67" alt="" data-canonical-src="https://free4.yunpng.top/2025/04/30/6811d9ef19eed.png" style="max-width: 100%;"></a><br>
+删除完成后在Domain出填写自己域名并解析好ip（ip在登录时后的服务器信息里面）➡点击Create保存域名<br>
+<a href="https://free4.yunpng.top/2025/04/30/6811dcafb6d9a.png" rel="nofollow"><img src="https://camo.githubusercontent.com/9386b8196931c67f24b41d959a5f8c6e313cd5ed2e53b19a55dded3484efbac7/68747470733a2f2f66726565342e79756e706e672e746f702f323032352f30342f33302f363831316463616662366439612e706e67" alt="" data-canonical-src="https://free4.yunpng.top/2025/04/30/6811dcafb6d9a.png" style="max-width: 100%;"></a><br>
+下一步部署ssl依次点击Security Management➡SSL Certificates➡选择Get automatic certificate from ACME Provider➡勾选Force SSL with https redirect➡Save<br>
+<a href="https://free4.yunpng.top/2025/04/30/6811e1bfe5999.png" rel="nofollow"><img src="https://camo.githubusercontent.com/d045f62fbf0906289b4ecbc659c344d8f857df3f980b43e9c4e0c9e9d4f5b64e/68747470733a2f2f66726565342e79756e706e672e746f702f323032352f30342f33302f363831316531626665353939392e706e67" alt="" data-canonical-src="https://free4.yunpng.top/2025/04/30/6811e1bfe5999.png" style="max-width: 100%;"></a><br>
+随后点击点击左栏 Files Management ➡File Management➡domains➡xxx.xxxxx.com➡public_html. 将项目中的 app.js 和 package.json 上传到此目录下即可</p>
+<p><a href="https://free4.yunpng.top/2025/04/30/6811e264e17d6.png" rel="nofollow"><img src="https://camo.githubusercontent.com/66b3402906595d4733cd15d2601c6dd2e478657cf9884865d9eeda67b5aba46a/68747470733a2f2f66726565342e79756e706e672e746f702f323032352f30342f33302f363831316532363465313764362e706e67" alt="" data-canonical-src="https://free4.yunpng.top/2025/04/30/6811e264e17d6.png" style="max-width: 100%;"></a><br>
+<a href="https://free4.yunpng.top/2025/04/30/6811e2e778efd.png" rel="nofollow"><img src="https://camo.githubusercontent.com/51fd032f071ce3a4ff2767c616c6dace6d2fac48425175f8ef3a3d38f0322c0c/68747470733a2f2f66726565342e79756e706e672e746f702f323032352f30342f33302f363831316532653737386566642e706e67" alt="" data-canonical-src="https://free4.yunpng.top/2025/04/30/6811e2e778efd.png" style="max-width: 100%;"></a><br>
+下一步回到面板点击左栏 Website Management➡NodeJs APP➡Create application➡CREATE先看图<br>
+Node.js version➡v22<br>
+Application root➡domains/xxx.xxxx.com/public_html (替换自己的完整域名)切记不要填写错误<br>
+Application startup file➡app.js<br>
+点击Add variable添加环境变量<br>
+DOMAIN➡你的域名<br>
+PORT ➡端口（自己随便填写别人没用过的端口）<br>
+UUID➡生成的uuid<br>
+NEZHA_SERVER➡哪吒探针地址（没有可以不填）<br>
+NEZHA_PORT ➡哪吒探针端口（没有可以不填）<br>
+NEZHA_KEY➡哪吒探针密钥（没有可以不填）<br>
+<a href="https://free4.yunpng.top/2025/04/30/6811e69dd76a0.png" rel="nofollow"><img src="https://camo.githubusercontent.com/e2e74e53843e92b5a06b709a11f1be74146e8dd1da81454a006453c362bfe03c/68747470733a2f2f66726565342e79756e706e672e746f702f323032352f30342f33302f363831316536396464373661302e706e67" alt="" data-canonical-src="https://free4.yunpng.top/2025/04/30/6811e69dd76a0.png" style="max-width: 100%;"></a><br>
+<a href="https://free4.yunpng.top/2025/04/30/6811e9a952dd9.png" rel="nofollow"><img src="https://camo.githubusercontent.com/62f8ba2e4e3259a99902e992b5570e019bcb08f1a04afcde40ab721ebf2cffaf/68747470733a2f2f66726565342e79756e706e672e746f702f323032352f30342f33302f363831316539613935326464392e706e67" alt="" data-canonical-src="https://free4.yunpng.top/2025/04/30/6811e9a952dd9.png" style="max-width: 100%;"></a><br>
+此时创建完成 Node.js 应用后往下翻点击Run NPM install等待执行完毕<br>
+<a href="https://free4.yunpng.top/2025/05/03/681593de18f58.png" rel="nofollow"><img src="https://camo.githubusercontent.com/8084bd8e68289cc0473a0707e95b9552f9a0ebfa9fef9b0f1308843579cf498c/68747470733a2f2f66726565342e79756e706e672e746f702f323032352f30352f30332f363831353933646531386635382e706e67" alt="" data-canonical-src="https://free4.yunpng.top/2025/05/03/681593de18f58.png" style="max-width: 100%;"></a><br>
+等待完毕后点击 Run JS script弹出界面后点击start再点击Run JS script即可<br>
+<a href="https://free4.yunpng.top/2025/04/30/6811f078abee8.png" rel="nofollow"><img src="https://camo.githubusercontent.com/aa99c347f6c8dc45b8d55ce3ce139041d59c7dcc8e431741a26cc7384a11622e/68747470733a2f2f66726565342e79756e706e672e746f702f323032352f30342f33302f363831316630373861626565382e706e67" alt="" data-canonical-src="https://free4.yunpng.top/2025/04/30/6811f078abee8.png" style="max-width: 100%;"></a><br>
+<a href="https://free4.yunpng.top/2025/04/30/6811f0b83fd02.png" rel="nofollow"><img src="https://camo.githubusercontent.com/474797eafd83bd48c1290404d6d1193abb9f46f634d5983da2e7304b26a8db51/68747470733a2f2f66726565342e79756e706e672e746f702f323032352f30342f33302f363831316630623833666430322e706e67" alt="" data-canonical-src="https://free4.yunpng.top/2025/04/30/6811f0b83fd02.png" style="max-width: 100%;"></a><br>
+这时输入你的域名 /sub 即可获取节点如xxxx.xom/sub 并访问得到类似于dmxlc3M6Ly9iMmU3ODcwYi1mZGE1LTQzMGQtYmNhMC00ZjNmYTdlZjIwM2NAdnAuemhpeXUudXMua2c6NDQzP2VuY3J5cHRpb249bm9uZSZzZWN1cml0eT10bHMmc这样的将他导入到v2中在设置一下跳过脸书认证就可以了<br>
+如果访问是503请更换端口或检查有无错误换端口请重新点击Run JS script<br>
+github保活篇</p>
+<p><a href="https://github.com/banfeng-git/webhost">点击进入github查看教程</a></p></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://MaryCHobbs.github.io">迷茫的小爬虫博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if(""!=""){
+    var startSite=new Date("");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","MaryCHobbs/MaryCHobbs.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+
+
+</html>
