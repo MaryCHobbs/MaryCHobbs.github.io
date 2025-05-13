@@ -90,4 +90,4 @@
 
 ### **网页连接的使用**
 
-**百度一下   [[这是一个带隐藏连接的示例](http://www.baidu.com/)](http://www.baidu.com)**
+**百度一下   [这是一个带隐藏连接的示例](http://www.baidu.com/)**
