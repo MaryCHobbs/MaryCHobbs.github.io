@@ -1,11 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>迷茫的小爬虫博客</title><link>https://MaryCHobbs.github.io</link><description>这是一个专注推荐IT技术和软件的博客</description><copyright>迷茫的小爬虫博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/204805194?s=400&amp;u=94c84f1870797a1161db4523ab8d08487aeadf3a&amp;v=4</url><title>avatar</title><link>https://MaryCHobbs.github.io</link></image><lastBuildDate>Tue, 13 May 2025 12:53:59 +0000</lastBuildDate><managingEditor>迷茫的小爬虫博客</managingEditor><ttl>60</ttl><webMaster>迷茫的小爬虫博客</webMaster><item><title>用Docker搭建一个在线观影平台LibreTV</title><link>https://MaryCHobbs.github.io/post/yong-Docker-da-jian-yi-ge-zai-xian-guan-ying-ping-tai-LibreTV.html</link><description>## 前言
-
-关于在线影视类的项目之前给大家推荐苹果CMS的搭建教程，那么今天给大家分享一个类似的在线观影项目-LibreTV  
-
-![image-1746002765471](https://www.ywsj365.com/upload/2025/04/image-1746002765471.png)
-
-一个轻量级、免费的在线视频搜索与观看平台，提供来自多个视频源的内容搜索与播放服务。</description><guid isPermaLink="true">https://MaryCHobbs.github.io/post/yong-Docker-da-jian-yi-ge-zai-xian-guan-ying-ping-tai-LibreTV.html</guid><pubDate>Tue, 13 May 2025 12:51:43 +0000</pubDate></item><item><title>Webhostmost 部署vless+github保号</title><link>https://MaryCHobbs.github.io/post/Webhostmost%20-bu-shu-vless%2Bgithub-bao-hao.html</link><description>前期准备
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>迷茫的小爬虫博客</title><link>https://MaryCHobbs.github.io</link><description>这是一个专注推荐IT技术和软件的博客</description><copyright>迷茫的小爬虫博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/204805194?s=400&amp;u=94c84f1870797a1161db4523ab8d08487aeadf3a&amp;v=4</url><title>avatar</title><link>https://MaryCHobbs.github.io</link></image><lastBuildDate>Tue, 13 May 2025 13:02:25 +0000</lastBuildDate><managingEditor>迷茫的小爬虫博客</managingEditor><ttl>60</ttl><webMaster>迷茫的小爬虫博客</webMaster><item><title>Webhostmost 部署vless+github保号</title><link>https://MaryCHobbs.github.io/post/Webhostmost%20-bu-shu-vless%2Bgithub-bao-hao.html</link><description>前期准备
 
 准备好一个域名，一个github账号（没有请自行注册）  
 wbehostmost [项目地址](https://github.com/banfeng-git/Webhostmost-ws-nodejs) 
