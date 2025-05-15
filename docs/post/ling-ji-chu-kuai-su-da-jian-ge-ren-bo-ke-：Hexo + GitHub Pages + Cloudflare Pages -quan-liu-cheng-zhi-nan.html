@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/204805194?s=400&u=94c84f1870797a1161db4523ab8d08487aeadf3a&v=4"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="## 1\. 前期准备工作
+
+1. [Node](https://nodejs.org/en) （ **必备** ）
+2. [Git](https://git-scm.com/downloads) （ **必备** ）
+3. [VSCode](https://code.visualstudio.com/) （ **可选** ）
+4. 域名，建议配置一个域名以避免被防火墙阻挡，推荐购买链接： [https://spaceship.sjv.io/limin](https://spaceship.sjv.io/limin)
+5. 配置 Cloudflare，托管域名： [托管教程](https://youtu.be/3a6ImhcizcU?si=axjlZmba3q9wtTEN)
+6. 创建免费图床： [图床搭建教程](https://youtu.be/ah5szwr4JxM?si=18c42iG8NqIcHJLX)
+7. 注册cloudflare怕被扣费，推荐用myfine有50张虚拟卡（需要护照），教程链接： [注册教程](https://youtu.be/gg3Ji4WDszs?si=fqtFwTMjsnoUExxG)
+8. Hexo官方主题展示： [点击跳转](https://hexo.io/themes/)
+
+---
+
+\[![](https://www.youtube.com/watch?v=64IUtZsvbCE)\]
+
+### 2.1. 安装 Node
+
+1. 从 [Node 官网](https://nodejs.org/en) 下载适合自己系统的版本。">
+<meta property="og:title" content="零基础快速搭建个人博客：Hexo + GitHub Pages + Cloudflare Pages 全流程指南">
+<meta property="og:description" content="## 1\. 前期准备工作
+
+1. [Node](https://nodejs.org/en) （ **必备** ）
+2. [Git](https://git-scm.com/downloads) （ **必备** ）
+3. [VSCode](https://code.visualstudio.com/) （ **可选** ）
+4. 域名，建议配置一个域名以避免被防火墙阻挡，推荐购买链接： [https://spaceship.sjv.io/limin](https://spaceship.sjv.io/limin)
+5. 配置 Cloudflare，托管域名： [托管教程](https://youtu.be/3a6ImhcizcU?si=axjlZmba3q9wtTEN)
+6. 创建免费图床： [图床搭建教程](https://youtu.be/ah5szwr4JxM?si=18c42iG8NqIcHJLX)
+7. 注册cloudflare怕被扣费，推荐用myfine有50张虚拟卡（需要护照），教程链接： [注册教程](https://youtu.be/gg3Ji4WDszs?si=fqtFwTMjsnoUExxG)
+8. Hexo官方主题展示： [点击跳转](https://hexo.io/themes/)
+
+---
+
+\[![](https://www.youtube.com/watch?v=64IUtZsvbCE)\]
+
+### 2.1. 安装 Node
+
+1. 从 [Node 官网](https://nodejs.org/en) 下载适合自己系统的版本。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://MaryCHobbs.github.io/post/ling-ji-chu-kuai-su-da-jian-ge-ren-bo-ke-%EF%BC%9AHexo%20%2B%20GitHub%20Pages%20%2B%20Cloudflare%20Pages%20-quan-liu-cheng-zhi-nan.html">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/204805194?s=400&u=94c84f1870797a1161db4523ab8d08487aeadf3a&v=4">
+<title>零基础快速搭建个人博客：Hexo + GitHub Pages + Cloudflare Pages 全流程指南</title>
+<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+.copy-feedback {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    color: var(--color-fg-on-emphasis);
+    background-color: var(--color-fg-muted);
+    border-radius: 3px;
+    padding: 5px 8px;
+    font-size: 12px;
+}
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">零基础快速搭建个人博客：Hexo + GitHub Pages + Cloudflare Pages 全流程指南</h1>
+<div class="title-right">
+    <a href="https://MaryCHobbs.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/MaryCHobbs/MaryCHobbs.github.io/issues/6" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h2>1. 前期准备工作</h2>
+<ol>
+<li><a href="https://nodejs.org/en" rel="nofollow">Node</a> （ <strong>必备</strong> ）</li>
+<li><a href="https://git-scm.com/downloads" rel="nofollow">Git</a> （ <strong>必备</strong> ）</li>
+<li><a href="https://code.visualstudio.com/" rel="nofollow">VSCode</a> （ <strong>可选</strong> ）</li>
+<li>域名，建议配置一个域名以避免被防火墙阻挡，推荐购买链接： <a href="https://spaceship.sjv.io/limin" rel="nofollow">https://spaceship.sjv.io/limin</a></li>
+<li>配置 Cloudflare，托管域名： <a href="https://youtu.be/3a6ImhcizcU?si=axjlZmba3q9wtTEN" rel="nofollow">托管教程</a></li>
+<li>创建免费图床： <a href="https://youtu.be/ah5szwr4JxM?si=18c42iG8NqIcHJLX" rel="nofollow">图床搭建教程</a></li>
+<li>注册cloudflare怕被扣费，推荐用myfine有50张虚拟卡（需要护照），教程链接： <a href="https://youtu.be/gg3Ji4WDszs?si=fqtFwTMjsnoUExxG" rel="nofollow">注册教程</a></li>
+<li>Hexo官方主题展示： <a href="https://hexo.io/themes/" rel="nofollow">点击跳转</a></li>
+</ol>
+<hr>
+<p>[<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/b16f0d7775fa90a23d54efd56204e75976fb50ba2e142c2585ed05c81f171196/68747470733a2f2f7777772e796f75747562652e636f6d2f77617463683f763d36344955745a7376624345"><img src="https://camo.githubusercontent.com/b16f0d7775fa90a23d54efd56204e75976fb50ba2e142c2585ed05c81f171196/68747470733a2f2f7777772e796f75747562652e636f6d2f77617463683f763d36344955745a7376624345" alt="" data-canonical-src="https://www.youtube.com/watch?v=64IUtZsvbCE" style="max-width: 100%;"></a>]</p>
+<h3>2.1. 安装 Node</h3>
+<ol>
+<li>从 <a href="https://nodejs.org/en" rel="nofollow">Node 官网</a> 下载适合自己系统的版本。</li>
+<li>完成安装，Windows电脑建议使用默认目录 <code class="notranslate">C:/Program Files/nodejs/</code> ，苹果电脑无所谓。</li>
+<li>验证安装成功，在命令行中输入 <code class="notranslate">node -v</code> 检查版本信息。<br>
+<a href="https://13fe9ff.webp.li/2024/10/2a18b0579664e643e4363fc93d47c842.png" rel="nofollow"><img src="https://camo.githubusercontent.com/51b50e046485bddbd7c582ed460895374a6b908103511e5ea88bb7e2c3e95ff2/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f32613138623035373936363465363433653433363366633933643437633834322e706e67" alt="示例图片" data-canonical-src="https://13fe9ff.webp.li/2024/10/2a18b0579664e643e4363fc93d47c842.png" style="max-width: 100%;"></a></li>
+<li>苹果用户可通过右键文件夹，选择“服务”，新建终端窗口以便操作。</li>
+</ol>
+<h3>2.2. 安装 Git</h3>
+<ol>
+<li>从 <a href="https://git-scm.com/downloads" rel="nofollow">Git 官网</a> 下载适配的 Git 版本。<br>
+<a href="https://13fe9ff.webp.li/2024/10/3957eda9a3c4ec8422eecc672b059d42.png" rel="nofollow"><img src="https://camo.githubusercontent.com/b46fc2456c0e08e3a15a438dea840bcbc410509ffb91f2b710d04763881d0c58/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f33393537656461396133633465633834323265656363363732623035396434322e706e67" alt="示例图片" data-canonical-src="https://13fe9ff.webp.li/2024/10/3957eda9a3c4ec8422eecc672b059d42.png" style="max-width: 100%;"></a></li>
+<li>Windows 用户可使用默认目录安装 Git，Mac 用户则按提示在终端操作。</li>
+<li>验证安装完毕后，Windows 用户会在开始菜单中看到 <code class="notranslate">Git Bash</code> 等应用。</li>
+</ol>
+<h2>2. 配置 Git 密钥并连接至 Github</h2>
+<p>常用 Git 命令:</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">bashgit config -l
+
+git config --system --list
+
+git config --global --list</pre></div>
+<h4>3.1. 配置用户名和邮箱</h4>
+<div class="highlight highlight-source-shell"><pre class="notranslate">bashgit config --global user.name <span class="pl-s"><span class="pl-pds">"</span>你的用户名<span class="pl-pds">"</span></span>
+
+git config --global user.email <span class="pl-s"><span class="pl-pds">"</span>你的邮箱<span class="pl-pds">"</span></span></pre></div>
+<p>通过 <code class="notranslate">git config -l</code> 验证是否成功。<br>
+<a href="https://13fe9ff.webp.li/2024/10/1d37926686d18e0ac468ce6d00c07a50.png" rel="nofollow"><img src="https://camo.githubusercontent.com/c542ab7d892a64e5ccb8e70c11cde0a4c12aa0c836b96696adb2a0a9ed520718/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f31643337393236363836643138653061633436386365366430306330376135302e706e67" alt="abd" data-canonical-src="https://13fe9ff.webp.li/2024/10/1d37926686d18e0ac468ce6d00c07a50.png" style="max-width: 100%;"></a></p>
+<h4>3.2. 配置公钥连接 Github</h4>
+<ol>
+<li>生成 SSH 公钥：</li>
+</ol>
+<div class="highlight highlight-source-shell"><pre class="notranslate">bashssh-keygen -t rsa -C <span class="pl-s"><span class="pl-pds">"</span>你的邮箱<span class="pl-pds">"</span></span></pre></div>
+<p>一路回车生成密钥，进入 <code class="notranslate">.ssh</code> 文件夹复制 <code class="notranslate">id_rsa.pub</code> 公钥内容，配置到 Github 的 SSH 设置中。<br>
+<a href="https://13fe9ff.webp.li/2024/10/d2ec687d4c21887ffc96e96687630d7d.png" rel="nofollow"><img src="https://camo.githubusercontent.com/99c6f76512be9a2bac07ee3de0119fa35325001565d9506809b5d269ab5b78f7/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f64326563363837643463323138383766666339366539363638373633306437642e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/d2ec687d4c21887ffc96e96687630d7d.png" style="max-width: 100%;"></a></p>
+<h2>3.在苹果电脑上，如果你知道文件的路径，可以通过以下几种方式快速找到文件：</h2>
+<p>打开Finder。<br>
+按下 Command + Shift + G，在弹出的对话框中输入文件路径，然后按 Enter。这样可以直接跳转到该路径下的文件。<br>
+<a href="https://13fe9ff.webp.li/2024/10/1efba3fa54bedcba6059cc88a8daf717.png" rel="nofollow"><img src="https://camo.githubusercontent.com/0634c7ba953107a1f8e21b5f905429f6173ee03b9120dcae0b83faff6e4235ea/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f31656662613366613534626564636261363035396363383861386461663731372e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/1efba3fa54bedcba6059cc88a8daf717.png" style="max-width: 100%;"></a></p>
+<h3>在windows电脑上：</h3>
+<p>打开C盘下用户文件夹下的.ssh的文件夹，会看到以下文件<br>
+id_rsa 私钥<br>
+id_rsa.pub 公钥</p>
+<p>找到公钥匙，并复制，打开GitHub开始配置<br>
+<a href="https://13fe9ff.webp.li/2024/10/0557c8ce136c6e43f4c1541d31beba62.png" rel="nofollow"><img src="https://camo.githubusercontent.com/e12b36ed0a941776c6bafe3e13c798016627245f7b9de8acfb4e3438872ff686/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f30353537633863653133366336653433663463313534316433316265626136322e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/0557c8ce136c6e43f4c1541d31beba62.png" style="max-width: 100%;"></a></p>
+<ol>
+<li>将 SSH KEY 配置到 GitHub<br>
+进入github，点击右上角头像 选择settings，进入设置页后选择 SSH and GPG keys，名字随便起，公钥填到Key那一栏。<br>
+<a href="https://13fe9ff.webp.li/2024/10/84b777a4f0b9a8a290e1472087ce30e2.png" rel="nofollow"><img src="https://camo.githubusercontent.com/05aaf32d0e1eddaf668bc87bcf74ca50214744a51b9590e1360b670c55322423/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f38346237373761346630623961386132393065313437323038376365333065322e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/84b777a4f0b9a8a290e1472087ce30e2.png" style="max-width: 100%;"></a></li>
+</ol>
+<p><a href="https://13fe9ff.webp.li/2024/10/ab0ad8dba8ff5ace69b12e9ffa5d8b9d.png" rel="nofollow"><img src="https://camo.githubusercontent.com/38e93aee386df182432b826a9e44d10fccb3ded85cea17d3a26c85d4a1235f28/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f61623061643864626138666635616365363962313265396666613564386239642e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/ab0ad8dba8ff5ace69b12e9ffa5d8b9d.png" style="max-width: 100%;"></a></p>
+<ol>
+<li>测试连接：</li>
+</ol>
+<div class="highlight highlight-source-shell"><pre class="notranslate">bashssh -T git@github.com</pre></div>
+<p>第一次连接会提示Are you sure you want to continue connecting (yes/no/[fingerprint])?，输入yes即可<br>
+<a href="https://13fe9ff.webp.li/2024/10/db87e8d1e4767b675c03a907c06ecdda.png" rel="nofollow"><img src="https://camo.githubusercontent.com/f589259c1d33594ebe340def4d3b3077a0c50c96a0351bf92fad5458f36165d6/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f64623837653864316534373637623637356330336139303763303665636464612e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/db87e8d1e4767b675c03a907c06ecdda.png" style="max-width: 100%;"></a></p>
+<h4>3.3. 创建 GitHub.io 仓库</h4>
+<ol>
+<li>点击右上角的 <code class="notranslate">+</code> 按钮，选择新建仓库，命名格式为 <code class="notranslate">&lt;用户名&gt;.github.io</code> ，(注意：前缀必须为用户名)选择公开 <code class="notranslate">Public</code> 。</li>
+<li>点击 Creat repository 进行创建即可。<br>
+<a href="https://13fe9ff.webp.li/2024/10/aff632548c5c460783916a88a187e76a.png" rel="nofollow"><img src="https://camo.githubusercontent.com/dd9f6ed437f854087e9df581524d5db477176ee438fec880efe9a163cdc9aeb1/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f61666636333235343863356334363037383339313661383861313837653736612e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/aff632548c5c460783916a88a187e76a.png" style="max-width: 100%;"></a></li>
+</ol>
+<p><a href="https://13fe9ff.webp.li/2024/10/6a6a086ab644e9f9ac5820570686e62c.png" rel="nofollow"><img src="https://camo.githubusercontent.com/ed258cf73764ad29f5ce07d227c6a8f702fd0c983e8c5e47f1aee8a4cd8fbdf5/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f36613661303836616236343465396639616335383230353730363836653632632e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/6a6a086ab644e9f9ac5820570686e62c.png" style="max-width: 100%;"></a></p>
+<h2>4. 初始化 Hexo 博客</h2>
+<ol>
+<li>创建文件夹保存博客源码：</li>
+</ol>
+<h3>苹果用户随意创建好文件夹后，在文件夹右击，选择“服务”选择“新建终端窗口以便操作”</h3>
+<h3>Windows用户可以（例如 D:/Hexo-Blog），在该文件夹内启动 Git Bash 或终端。</h3>
+<ol>
+<li>安装 Hexo：</li>
+</ol>
+<div class="highlight highlight-source-shell"><pre class="notranslate">bashnpm install -g hexo-cli <span class="pl-k">&amp;&amp;</span> hexo -v</pre></div>
+<p>出现此页面代表安装成功<br>
+<a href="https://13fe9ff.webp.li/2024/10/09dfd08bc762f761b61b4666ac383b99.png" rel="nofollow"><img src="https://camo.githubusercontent.com/cf05b816430148e760fcfd65fc29bff736194945771976e8f12f45d8b23d2668/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f30396466643038626337363266373631623631623436363661633338336239392e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/09dfd08bc762f761b61b4666ac383b99.png" style="max-width: 100%;"></a></p>
+<ol>
+<li>初始化 Hexo 项目安装依赖：</li>
+</ol>
+<div class="highlight highlight-source-shell"><pre class="notranslate">bashhexo init blog-demo
+
+<span class="pl-c1">cd</span> blog-demo
+
+npm i</pre></div>
+<p><a href="https://13fe9ff.webp.li/2024/10/d17588a07ad38a5285fc42d4c781f9cd.png" rel="nofollow"><img src="https://camo.githubusercontent.com/967ef5530258f4271d991ff4a101f089fd18d0ecc5912455a17f8c430d21cab1/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f64313735383861303761643338613532383566633432643463373831663963642e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/d17588a07ad38a5285fc42d4c781f9cd.png" style="max-width: 100%;"></a></p>
+<p>现在你的文件夹会有这些内容<br>
+<a href="https://13fe9ff.webp.li/2024/10/94f0f93b98c067b27d235830032d56ae.png" rel="nofollow"><img src="https://camo.githubusercontent.com/1dbb3fe80b659ae9fa46e39989b4254434d6cf4d590a8fc7cee66814c57661f1/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f39346630663933623938633036376232376432333538333030333264353661652e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/94f0f93b98c067b27d235830032d56ae.png" style="max-width: 100%;"></a></p>
+<ol>
+<li>启动项目并验证：</li>
+</ol>
+<div class="highlight highlight-source-shell"><pre class="notranslate">bashhexo cl <span class="pl-k">&amp;&amp;</span> hexo s</pre></div>
+<p>在浏览器中访问 <a href="http://localhost:4000/" rel="nofollow">http://localhost:4000/</a> 以查看效果。</p>
+<p><a href="https://13fe9ff.webp.li/2024/10/5f1f08bb49c8f8d7f63c0bee92e3587b.png" rel="nofollow"><img src="https://camo.githubusercontent.com/56a7b426f9306c612450692f6cbe63a2dab0194a6a84724651bebb655852491e/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f35663166303862623439633866386437663633633062656539326533353837622e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/5f1f08bb49c8f8d7f63c0bee92e3587b.png" style="max-width: 100%;"></a></p>
+<h2>5. 将静态博客挂载到 GitHub Pages</h2>
+<ol>
+<li>修改 <code class="notranslate">_config.yml</code> 文件，配置 <code class="notranslate">repository</code> 为你的 GitHub 地址，分支改为 <code class="notranslate">main</code> ：</li>
+</ol>
+<div class="highlight highlight-source-yaml"><pre class="notranslate"><span class="pl-ent">yamldeploy</span>:
+
+  <span class="pl-ent">type</span>: <span class="pl-s">git</span>
+
+  <span class="pl-ent">repository</span>: <span class="pl-s">git@github.com:你的用户名/你的用户名.github.io.git</span>
+
+  <span class="pl-ent">branch</span>: <span class="pl-s">main</span></pre></div>
+<ol>
+<li>安装 <code class="notranslate">hexo-deployer-git</code> ：</li>
+</ol>
+<div class="highlight highlight-source-shell"><pre class="notranslate">bashnpm install hexo-deployer-git --save</pre></div>
+<ol>
+<li>部署到 GitHub：</li>
+</ol>
+<div class="highlight highlight-source-shell"><pre class="notranslate">bash// Git BASH终端
+
+hexo clean <span class="pl-k">&amp;&amp;</span> hexo generate <span class="pl-k">&amp;&amp;</span> hexo deploy  
+
+// 或者
+
+// VSCODE终端
+
+hexo cl<span class="pl-k">;</span> hexo g<span class="pl-k">;</span> hexo d</pre></div>
+<p>访问 <code class="notranslate">https://&lt;用户名&gt;.github.io/</code> 以查看博客。</p>
+<h2>6. 将静态博客挂载到 Cloudflare Pages</h2>
+<ol>
+<li>通过 Cloudflare Pages 连接 Git 仓库。</li>
+<li>登录 GitHub，点击保存并部署。</li>
+<li>部署成功后，访问 Cloudflare 提供的链接。</li>
+</ol>
+<p>如有自定义域名，可以在 Cloudflare Pages 中绑定。没有建议去申请，这样博客就不被墙了。</p>
+<h2>如何使用</h2>
+<h3>新建一篇博文</h3>
+<div class="highlight highlight-source-shell"><pre class="notranslate">bashhexo new 这是一篇新的博文</pre></div>
+<p>编辑 <code class="notranslate">_posts</code> 文件夹中的新建文章，使用 Markdown 语法编写内容。</p>
+<h3>本地预览</h3>
+<div class="highlight highlight-source-shell"><pre class="notranslate">bashhexo cl <span class="pl-k">&amp;&amp;</span> hexo s</pre></div>
+<h3>推送到 GitHub</h3>
+<div class="highlight highlight-source-shell"><pre class="notranslate">bashhexo cl <span class="pl-k">&amp;&amp;</span> hexo g <span class="pl-k">&amp;&amp;</span> hexo d</pre></div>
+<h2>进阶教程预告</h2>
+<p>接下来会介绍 Hexo 主题美化 文章写作 赶紧订阅我吧！</p>
+<h2>解决 VSCODE 报错</h2>
+<p>如果首次执行 VSCODE 终端出现报错，可以使用管理员身份打开 PowerShell，并执行以下命令：</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">bashSet-ExecutionPolicy RemoteSigned</pre></div></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://MaryCHobbs.github.io">迷茫的小爬虫博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if(""!=""){
+    var startSite=new Date("");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z', 'copy': 'M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z', 'check': 'M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","MaryCHobbs/MaryCHobbs.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const createClipboardHTML = (codeContent, additionalClasses = '') => `
+        <pre class="notranslate"><code class="notranslate">${codeContent}</code></pre>
+        <div class="clipboard-container position-absolute right-0 top-0 ${additionalClasses}">
+            <clipboard-copy class="ClipboardButton btn m-2 p-0" role="button" style="display: inherit;">
+                <svg height="16" width="16" class="octicon octicon-copy m-2"><path d="${IconList["copy"]}"></path></svg>
+                <svg height="16" width="16" class="octicon octicon-check color-fg-success m-2 d-none"><path d="${IconList["check"]}"></path></svg>
+            </clipboard-copy>
+            <div class="copy-feedback">Copied!</div>
+        </div>
+    `;
+
+    const handleCodeElements = (selector = '') => {
+        document.querySelectorAll(selector).forEach(codeElement => {
+            const codeContent = codeElement.innerHTML;
+            const newStructure = document.createElement('div');
+            newStructure.className = 'snippet-clipboard-content position-relative overflow-auto';
+            newStructure.innerHTML = createClipboardHTML(codeContent);
+
+            const parentElement = codeElement.parentElement;
+            if (selector.includes('highlight')) {
+                parentElement.insertBefore(newStructure, codeElement.nextSibling);
+                parentElement.removeChild(codeElement);
+            } else {
+                parentElement.parentElement.replaceChild(newStructure, parentElement);
+            }
+        });
+    };
+
+    handleCodeElements('pre.notranslate > code.notranslate');
+    handleCodeElements('div.highlight > pre.notranslate');
+
+    let currentFeedback = null;
+    document.querySelectorAll('clipboard-copy').forEach(copyButton => {
+        copyButton.addEventListener('click', () => {
+            const codeContent = copyButton.closest('.snippet-clipboard-content').innerText;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = codeContent;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            const copyIcon = copyButton.querySelector('.octicon-copy');
+            const checkIcon = copyButton.querySelector('.octicon-check');
+            const copyFeedback = copyButton.nextElementSibling;
+
+            if (currentFeedback && currentFeedback !== copyFeedback) {currentFeedback.style.display = 'none';}
+            currentFeedback = copyFeedback;
+
+            copyIcon.classList.add('d-none');
+            checkIcon.classList.remove('d-none');
+            copyFeedback.style.display = 'block';
+            copyButton.style.borderColor = 'var(--color-success-fg)';
+
+            setTimeout(() => {
+                copyIcon.classList.remove('d-none');
+                checkIcon.classList.add('d-none');
+                copyFeedback.style.display = 'none';
+                copyButton.style.borderColor = '';
+            }, 2000);
+        });
+    });
+});
+
+</script>
+
+
+</html>
