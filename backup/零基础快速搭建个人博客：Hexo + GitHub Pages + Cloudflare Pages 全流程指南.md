@@ -11,8 +11,6 @@
 
 ---
 
-\[![](https://www.youtube.com/watch?v=64IUtZsvbCE)\]
-
 ### 2.1. 安装 Node
 
 1. 从 [Node 官网](https://nodejs.org/en) 下载适合自己系统的版本。

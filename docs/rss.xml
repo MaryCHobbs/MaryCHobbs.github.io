@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>迷茫的小爬虫博客</title><link>https://MaryCHobbs.github.io</link><description>这是一个专注推荐IT技术和软件的博客</description><copyright>迷茫的小爬虫博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/204805194?s=400&amp;u=94c84f1870797a1161db4523ab8d08487aeadf3a&amp;v=4</url><title>avatar</title><link>https://MaryCHobbs.github.io</link></image><lastBuildDate>Thu, 15 May 2025 03:35:17 +0000</lastBuildDate><managingEditor>迷茫的小爬虫博客</managingEditor><ttl>60</ttl><webMaster>迷茫的小爬虫博客</webMaster><item><title>零基础快速搭建个人博客：Hexo + GitHub Pages + Cloudflare Pages 全流程指南</title><link>https://MaryCHobbs.github.io/post/ling-ji-chu-kuai-su-da-jian-ge-ren-bo-ke-%EF%BC%9AHexo%20%2B%20GitHub%20Pages%20%2B%20Cloudflare%20Pages%20-quan-liu-cheng-zhi-nan.html</link><description>## 1\. 前期准备工作
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>迷茫的小爬虫博客</title><link>https://MaryCHobbs.github.io</link><description>这是一个专注推荐IT技术和软件的博客</description><copyright>迷茫的小爬虫博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/204805194?s=400&amp;u=94c84f1870797a1161db4523ab8d08487aeadf3a&amp;v=4</url><title>avatar</title><link>https://MaryCHobbs.github.io</link></image><lastBuildDate>Thu, 15 May 2025 03:37:40 +0000</lastBuildDate><managingEditor>迷茫的小爬虫博客</managingEditor><ttl>60</ttl><webMaster>迷茫的小爬虫博客</webMaster><item><title>零基础快速搭建个人博客：Hexo + GitHub Pages + Cloudflare Pages 全流程指南</title><link>https://MaryCHobbs.github.io/post/ling-ji-chu-kuai-su-da-jian-ge-ren-bo-ke-%EF%BC%9AHexo%20%2B%20GitHub%20Pages%20%2B%20Cloudflare%20Pages%20-quan-liu-cheng-zhi-nan.html</link><description>## 1\. 前期准备工作
 
 1. [Node](https://nodejs.org/en) （ **必备** ）
 2. [Git](https://git-scm.com/downloads) （ **必备** ）
@@ -11,8 +11,6 @@
 8. Hexo官方主题展示： [点击跳转](https://hexo.io/themes/)
 
 ---
-
-\[![](https://www.youtube.com/watch?v=64IUtZsvbCE)\]
 
 ### 2.1. 安装 Node
 
