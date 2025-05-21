@@ -1,5 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>迷茫的小爬虫博客</title><link>https://MaryCHobbs.github.io</link><description>这是一个专注推荐IT技术和软件的博客</description><copyright>迷茫的小爬虫博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/204805194?s=400&amp;u=94c84f1870797a1161db4523ab8d08487aeadf3a&amp;v=4</url><title>avatar</title><link>https://MaryCHobbs.github.io</link></image><lastBuildDate>Wed, 21 May 2025 09:22:22 +0000</lastBuildDate><managingEditor>迷茫的小爬虫博客</managingEditor><ttl>60</ttl><webMaster>迷茫的小爬虫博客</webMaster><item><title>监控摄像头当普通摄像头的使用方法</title><link>https://MaryCHobbs.github.io/post/jian-kong-she-xiang-tou-dang-pu-tong-she-xiang-tou-de-shi-yong-fang-fa.html</link><description>1  先安装   VLC 64位 播放器 
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>迷茫的小爬虫博客</title><link>https://MaryCHobbs.github.io</link><description>这是一个专注推荐IT技术和软件的博客</description><copyright>迷茫的小爬虫博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/204805194?s=400&amp;u=94c84f1870797a1161db4523ab8d08487aeadf3a&amp;v=4</url><title>avatar</title><link>https://MaryCHobbs.github.io</link></image><lastBuildDate>Wed, 21 May 2025 09:29:00 +0000</lastBuildDate><managingEditor>迷茫的小爬虫博客</managingEditor><ttl>60</ttl><webMaster>迷茫的小爬虫博客</webMaster><item><title>打印机报错0x000011b解决方法</title><link>https://MaryCHobbs.github.io/post/da-yin-ji-bao-cuo-0x000011b-jie-jue-fang-fa.html</link><description>##### 打开安装打印机的服务端电脑
+
+1、右键单击“开始”，然后单击“运行”，在“运行”框中键入 `regedit`
+
+2、找到以下注册表子项：
+
+`计算机\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Print`
+
+在print右键单击，选择“新建”，然后单击“DWORD (32-位) 值”。</description><guid isPermaLink="true">https://MaryCHobbs.github.io/post/da-yin-ji-bao-cuo-0x000011b-jie-jue-fang-fa.html</guid><pubDate>Wed, 21 May 2025 09:28:30 +0000</pubDate></item><item><title>监控摄像头当普通摄像头的使用方法</title><link>https://MaryCHobbs.github.io/post/jian-kong-she-xiang-tou-dang-pu-tong-she-xiang-tou-de-shi-yong-fang-fa.html</link><description>1  先安装   VLC 64位 播放器 
 	-  打开VLC播发器 选择 媒体里的打开网络串流选项把下面的地址修改好后填入后点击播放  测试摄像头画面是否出现，正常情况出现视频画面 后即可关闭VLC播放器  
  海康摄像头
  地址格式  
