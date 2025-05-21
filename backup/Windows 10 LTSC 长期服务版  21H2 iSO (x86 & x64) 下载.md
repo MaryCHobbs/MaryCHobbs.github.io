@@ -1,11 +1,10 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>迷茫的小爬虫博客</title><link>https://MaryCHobbs.github.io</link><description>这是一个专注推荐IT技术和软件的博客</description><copyright>迷茫的小爬虫博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/204805194?s=400&amp;u=94c84f1870797a1161db4523ab8d08487aeadf3a&amp;v=4</url><title>avatar</title><link>https://MaryCHobbs.github.io</link></image><lastBuildDate>Wed, 21 May 2025 08:43:22 +0000</lastBuildDate><managingEditor>迷茫的小爬虫博客</managingEditor><ttl>60</ttl><webMaster>迷茫的小爬虫博客</webMaster><item><title>Windows 10 LTSC 长期服务版  21H2 iSO (x86 &amp; x64) 下载</title><link>https://MaryCHobbs.github.io/post/Windows%2010%20LTSC%20-chang-qi-fu-wu-ban-%20%2021H2%20iSO%20%28x86%20%26%20x64%29%20-xia-zai.html</link><description>✔️ Windows 10 Enterprise LTSC 2021，版本 21H2，2021 年 11 月发布
+✔️ Windows 10 Enterprise LTSC 2021，版本 21H2，2021 年 11 月发布
 
 ?开始日期：2021 年 11 月 16 日
 
 服务周期至：2029 年 1 月 12 日
 
-?这些 ISO 文件现在可在 MicrosoftEvaluationCenter-&gt; https://www.microsoft.com/en-us/evalcenter/evaluate-windows-10-enterprise 上获得  
+?这些 ISO 文件现在可在 MicrosoftEvaluationCenter-> https://www.microsoft.com/en-us/evalcenter/evaluate-windows-10-enterprise 上获得  
 ?语言：英语（美国）、英语（英国）、中文（简体）、中文（繁体）、法语、德语、意大利语、日语、韩语、西班牙语、葡萄牙语（巴西）
 
 ##### 官方下载 [点击前往](https://massgrave.dev/windows_ltsc_links)
@@ -136,75 +135,4 @@ SHA256：9F855FCC4CB44C119F9CE73DABE569FCB7F4F4D85F922206BF2E108116A34F25
 
 ED2K： [链接](https://www.freedidi.com/?golink=aHR0cDovL2VkMms6Ly98ZmlsZXxTV19EVkQ5X1dJTl9FTlRfTFRTQ18yMDIxXzMyQklUX0NoblNpbXBfTUxGX1gyMi04NDQwMS5JU098MzYyMTEzMjI4OHxGNjdCQjMzOUFERkVGQ0Y2RUQyMjQwMEVBQUNCRDA2OHwv)
 
-BT： [链接](https://www.freedidi.com/)。</description><guid isPermaLink="true">https://MaryCHobbs.github.io/post/Windows%2010%20LTSC%20-chang-qi-fu-wu-ban-%20%2021H2%20iSO%20%28x86%20%26%20x64%29%20-xia-zai.html</guid><pubDate>Wed, 21 May 2025 08:42:54 +0000</pubDate></item><item><title>零基础快速搭建个人博客：Hexo + GitHub Pages + Cloudflare Pages 全流程指南</title><link>https://MaryCHobbs.github.io/post/ling-ji-chu-kuai-su-da-jian-ge-ren-bo-ke-%EF%BC%9AHexo%20%2B%20GitHub%20Pages%20%2B%20Cloudflare%20Pages%20-quan-liu-cheng-zhi-nan.html</link><description>## 1\. 前期准备工作
-
-1. [Node](https://nodejs.org/en) （ **必备** ）
-2. [Git](https://git-scm.com/downloads) （ **必备** ）
-3. [VSCode](https://code.visualstudio.com/) （ **可选** ）
-4. 域名，建议配置一个域名以避免被防火墙阻挡，推荐购买链接： [https://spaceship.sjv.io/limin](https://spaceship.sjv.io/limin)
-5. 配置 Cloudflare，托管域名： [托管教程](https://youtu.be/3a6ImhcizcU?si=axjlZmba3q9wtTEN)
-6. 创建免费图床： [图床搭建教程](https://youtu.be/ah5szwr4JxM?si=18c42iG8NqIcHJLX)
-7. 注册cloudflare怕被扣费，推荐用myfine有50张虚拟卡（需要护照），教程链接： [注册教程](https://youtu.be/gg3Ji4WDszs?si=fqtFwTMjsnoUExxG)
-8. Hexo官方主题展示： [点击跳转](https://hexo.io/themes/)
-
----
-
-### 2.1. 安装 Node
-
-1. 从 [Node 官网](https://nodejs.org/en) 下载适合自己系统的版本。</description><guid isPermaLink="true">https://MaryCHobbs.github.io/post/ling-ji-chu-kuai-su-da-jian-ge-ren-bo-ke-%EF%BC%9AHexo%20%2B%20GitHub%20Pages%20%2B%20Cloudflare%20Pages%20-quan-liu-cheng-zhi-nan.html</guid><pubDate>Thu, 15 May 2025 03:34:50 +0000</pubDate></item><item><title>Webhostmost 部署vless+github保号</title><link>https://MaryCHobbs.github.io/post/Webhostmost%20-bu-shu-vless%2Bgithub-bao-hao.html</link><description>前期准备
-
-准备好一个域名，一个github账号（没有请自行注册）  
-wbehostmost [项目地址](https://github.com/banfeng-git/Webhostmost-ws-nodejs) 
-[github保活项目地址](https://github.com/banfeng-git/webhost)  
-教程开始  
-注册购买篇  
-首先访问 [webhostmost](https://www.webhostmost.com/free-web-hosting) 点击Start For Free  
-[![](https://free4.yunpng.top/2025/04/30/6811ca8c773c8.png)](https://free4.yunpng.top/2025/04/30/6811ca8c773c8.png)  
-再选择I already own a Domain下面的域名随便填写然后点击use  
-[![](https://free4.yunpng.top/2025/04/30/6811cd25a8bcc.png)](https://free4.yunpng.top/2025/04/30/6811cd25a8bcc.png)  
-进入页面后选Server Location（服务器位置）看自己需要选择位置，选完后点击Conttinue  
-[![](https://free4.yunpng.top/2025/04/30/6811cfcd38e8d.png)](https://free4.yunpng.top/2025/04/30/6811cfcd38e8d.png)  
-跳转页面后往下拉填写注册信息除了邮箱和密码意外都可以用生成器生成，完成填写根据图片点击进行下一步  
-[![](https://free4.yunpng.top/2025/04/30/6811d2837c99d.png)](https://free4.yunpng.top/2025/04/30/6811d2837c99d.png)  
-结账后会出订单号上面会提示验证邮箱先到你邮箱里面去验证电子邮件随后点击Continue To Client Area就进入了登录界面输入你注册的账号密码登录即可此时账号注册过程结束  
-[![](https://free4.yunpng.top/2025/04/30/6811d5406a618.png)](https://free4.yunpng.top/2025/04/30/6811d5406a618.png)  
-部署篇  
-登陆后即可看到服务器信息，点击 Go To Control Panel 跳转到后台管理页面，点击左栏 Domain Management ➡Domain Setup➡勾选域名➡点击Delete删除域名➡出现弹窗勾选Delete web data在点Confirm就删除掉了  
-[![](https://free4.yunpng.top/2025/04/30/6811d79150326.png)](https://free4.yunpng.top/2025/04/30/6811d79150326.png)  
-[![](https://free4.yunpng.top/2025/04/30/6811d9ef19eed.png)](https://free4.yunpng.top/2025/04/30/6811d9ef19eed.png)  
-删除完成后在Domain出填写自己域名并解析好ip（ip在登录时后的服务器信息里面）➡点击Create保存域名  
-[![](https://free4.yunpng.top/2025/04/30/6811dcafb6d9a.png)](https://free4.yunpng.top/2025/04/30/6811dcafb6d9a.png)  
-下一步部署ssl依次点击Security Management➡SSL Certificates➡选择Get automatic certificate from ACME Provider➡勾选Force SSL with https redirect➡Save  
-[![](https://free4.yunpng.top/2025/04/30/6811e1bfe5999.png)](https://free4.yunpng.top/2025/04/30/6811e1bfe5999.png)  
-随后点击点击左栏 Files Management ➡File Management➡domains➡xxx.xxxxx.com➡public\_html. 将项目中的 app.js 和 package.json 上传到此目录下即可  
-
-[![](https://free4.yunpng.top/2025/04/30/6811e264e17d6.png)](https://free4.yunpng.top/2025/04/30/6811e264e17d6.png)  
-[![](https://free4.yunpng.top/2025/04/30/6811e2e778efd.png)](https://free4.yunpng.top/2025/04/30/6811e2e778efd.png)  
-下一步回到面板点击左栏 Website Management➡NodeJs APP➡Create application➡CREATE先看图  
-Node.js version➡v22  
-Application root➡domains/xxx.xxxx.com/public\_html (替换自己的完整域名)切记不要填写错误  
-Application startup file➡app.js  
-点击Add variable添加环境变量  
-DOMAIN➡你的域名  
-PORT ➡端口（自己随便填写别人没用过的端口）  
-UUID➡生成的uuid  
-NEZHA\_SERVER➡哪吒探针地址（没有可以不填）  
-NEZHA\_PORT ➡哪吒探针端口（没有可以不填）  
-NEZHA\_KEY➡哪吒探针密钥（没有可以不填）  
-[![](https://free4.yunpng.top/2025/04/30/6811e69dd76a0.png)](https://free4.yunpng.top/2025/04/30/6811e69dd76a0.png)  
-[![](https://free4.yunpng.top/2025/04/30/6811e9a952dd9.png)](https://free4.yunpng.top/2025/04/30/6811e9a952dd9.png)  
-此时创建完成 Node.js 应用后往下翻点击Run NPM install等待执行完毕  
-[![](https://free4.yunpng.top/2025/05/03/681593de18f58.png)](https://free4.yunpng.top/2025/05/03/681593de18f58.png)  
-等待完毕后点击 Run JS script弹出界面后点击start再点击Run JS script即可  
-[![](https://free4.yunpng.top/2025/04/30/6811f078abee8.png)](https://free4.yunpng.top/2025/04/30/6811f078abee8.png)  
-[![](https://free4.yunpng.top/2025/04/30/6811f0b83fd02.png)](https://free4.yunpng.top/2025/04/30/6811f0b83fd02.png)  
-这时输入你的域名 /sub 即可获取节点如xxxx.xom/sub 并访问得到类似于dmxlc3M6Ly9iMmU3ODcwYi1mZGE1LTQzMGQtYmNhMC00ZjNmYTdlZjIwM2NAdnAuemhpeXUudXMua2c6NDQzP2VuY3J5cHRpb249bm9uZSZzZWN1cml0eT10bHMmc这样的将他导入到v2中在设置一下跳过脸书认证就可以了  
-如果访问是503请更换端口或检查有无错误换端口请重新点击Run JS script  
-github保活篇
-
-[点击进入github查看教程](https://github.com/banfeng-git/webhost)  
-。</description><guid isPermaLink="true">https://MaryCHobbs.github.io/post/Webhostmost%20-bu-shu-vless%2Bgithub-bao-hao.html</guid><pubDate>Tue, 13 May 2025 12:48:52 +0000</pubDate></item><item><title>Domains-Support 配合SERV00 hostUNO，堪称养域名神器</title><link>https://MaryCHobbs.github.io/post/Domains-Support%20-pei-he-SERV00%20hostUNO%EF%BC%8C-kan-cheng-yang-yu-ming-shen-qi.html</link><description>![](https://www.youtube.com/watch?v=gPJ7tjRKnzo)
-
-## Domains-Support：养域名神器
-
-大家好！欢迎来到我的博客。</description><guid isPermaLink="true">https://MaryCHobbs.github.io/post/Domains-Support%20-pei-he-SERV00%20hostUNO%EF%BC%8C-kan-cheng-yang-yu-ming-shen-qi.html</guid><pubDate>Tue, 13 May 2025 12:39:05 +0000</pubDate></item></channel></rss>
+BT： [链接](https://www.freedidi.com/)
