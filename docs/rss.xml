@@ -1,5 +1,30 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>迷茫的小爬虫博客</title><link>https://MaryCHobbs.github.io</link><description>这是一个专注推荐IT技术和软件的博客</description><copyright>迷茫的小爬虫博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/204805194?s=400&amp;u=94c84f1870797a1161db4523ab8d08487aeadf3a&amp;v=4</url><title>avatar</title><link>https://MaryCHobbs.github.io</link></image><lastBuildDate>Wed, 21 May 2025 08:43:22 +0000</lastBuildDate><managingEditor>迷茫的小爬虫博客</managingEditor><ttl>60</ttl><webMaster>迷茫的小爬虫博客</webMaster><item><title>Windows 10 LTSC 长期服务版  21H2 iSO (x86 &amp; x64) 下载</title><link>https://MaryCHobbs.github.io/post/Windows%2010%20LTSC%20-chang-qi-fu-wu-ban-%20%2021H2%20iSO%20%28x86%20%26%20x64%29%20-xia-zai.html</link><description>✔️ Windows 10 Enterprise LTSC 2021，版本 21H2，2021 年 11 月发布
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>迷茫的小爬虫博客</title><link>https://MaryCHobbs.github.io</link><description>这是一个专注推荐IT技术和软件的博客</description><copyright>迷茫的小爬虫博客</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://avatars.githubusercontent.com/u/204805194?s=400&amp;u=94c84f1870797a1161db4523ab8d08487aeadf3a&amp;v=4</url><title>avatar</title><link>https://MaryCHobbs.github.io</link></image><lastBuildDate>Wed, 21 May 2025 09:22:22 +0000</lastBuildDate><managingEditor>迷茫的小爬虫博客</managingEditor><ttl>60</ttl><webMaster>迷茫的小爬虫博客</webMaster><item><title>监控摄像头当普通摄像头的使用方法</title><link>https://MaryCHobbs.github.io/post/jian-kong-she-xiang-tou-dang-pu-tong-she-xiang-tou-de-shi-yong-fang-fa.html</link><description>1  先安装   VLC 64位 播放器 
+	-  打开VLC播发器 选择 媒体里的打开网络串流选项把下面的地址修改好后填入后点击播放  测试摄像头画面是否出现，正常情况出现视频画面 后即可关闭VLC播放器  
+ 海康摄像头
+ 地址格式  
+rtsp://账户名:密码@IP地址:554/h264/ch1/main/av_stream  
+实例  
+rtsp://admin:a12345678@10.10.10.20:554/h264/ch1/main/av_stream
+
+大华摄像头
+地址格式
+rtsp://用户名:密码@摄像头IP地址/cam/realmonitor?channel=1&amp;subtype=0
+实例
+rtsp://admin:a12345678@10.10.10.21/cam/realmonitor?channel=1&amp;subtype=0
+
+### 摄像头软件安装
+1. 安装obs studio 软件  
+	1. 下载地址   https://obsproject.com/
+2. 在安装虚拟摄像头工具  obs-virtualcam-2.1.2-windows-x64-Installer.exe  (版本按照下载的最新版安装)  
+	1. 下载地址   https://obsproject.com/forum/threads/obs-virtualcam.167791/
+3. 在安装本地摄像头工具  DroidCam.OBSVirtualOut.Plugin.0.2.0.exe 和 DroidCam.Drivers.7.1.0.exe 两个软件(版本按照下载的最新版安装) 本工具是虚拟到物理机的摄像头工具，安装完后可以被微信使用
+	1. 下载地址  https://github.com/dev47apps/droidcam-obs-virtual-output
+
+全部安装完成后建议重启一下电脑
+
+### 软件设置
+1. 打开  obs studio  选择菜单栏 ==**工具**== 选项里的 ==**虚拟摄像头**== 选项打开 ，把 ==**水平翻转**== 选项 ==**打勾**== 后在点击 ==**启动**== 后关闭选项卡。</description><guid isPermaLink="true">https://MaryCHobbs.github.io/post/jian-kong-she-xiang-tou-dang-pu-tong-she-xiang-tou-de-shi-yong-fang-fa.html</guid><pubDate>Wed, 21 May 2025 09:21:57 +0000</pubDate></item><item><title>Windows 10 LTSC 长期服务版  21H2 iSO (x86 &amp; x64) 下载</title><link>https://MaryCHobbs.github.io/post/Windows%2010%20LTSC%20-chang-qi-fu-wu-ban-%20%2021H2%20iSO%20%28x86%20%26%20x64%29%20-xia-zai.html</link><description>✔️ Windows 10 Enterprise LTSC 2021，版本 21H2，2021 年 11 月发布
 
 ?开始日期：2021 年 11 月 16 日
 
