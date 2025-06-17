@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/204805194?s=400&u=94c84f1870797a1161db4523ab8d08487aeadf3a&v=4"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="![](https://www.youtube.com/watch?v=emEBm8Gw2wI)
+
+**《部署教程说明》**
+
+通过Cloudflare零成本部署 **VLESS/Trojan** 免费节点！一键部署永久免部署(**解决修改或设置变量自动部署出现1101错误问题**),最新版本可以实现 **VLESS/Trojan合成一套部署生成两类型节点** 、 **0变量设置** 、 **解决IP跳动** 、并可以 **优选IP区域** 指定 **优选反代IP区域** 实现固定优选IP的落地IP,实现解锁ChatGPT、Netflix、TikTok等网站，还能轻松观看4K视频，永久免费。">
+<meta property="og:title" content="终级教程 零成本部署VLESS、Trojan免费节点  二合一  一键部署生成两协议订阅节点">
+<meta property="og:description" content="![](https://www.youtube.com/watch?v=emEBm8Gw2wI)
+
+**《部署教程说明》**
+
+通过Cloudflare零成本部署 **VLESS/Trojan** 免费节点！一键部署永久免部署(**解决修改或设置变量自动部署出现1101错误问题**),最新版本可以实现 **VLESS/Trojan合成一套部署生成两类型节点** 、 **0变量设置** 、 **解决IP跳动** 、并可以 **优选IP区域** 指定 **优选反代IP区域** 实现固定优选IP的落地IP,实现解锁ChatGPT、Netflix、TikTok等网站，还能轻松观看4K视频，永久免费。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://MaryCHobbs.github.io/post/zhong-ji-jiao-cheng-%20-ling-cheng-ben-bu-shu-VLESS%E3%80%81Trojan-mian-fei-jie-dian-%20%20-er-he-yi-%20%20-yi-jian-bu-shu-sheng-cheng-liang-xie-yi-ding-yue-jie-dian.html">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/204805194?s=400&u=94c84f1870797a1161db4523ab8d08487aeadf3a&v=4">
+<title>终级教程 零成本部署VLESS、Trojan免费节点  二合一  一键部署生成两协议订阅节点</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">终级教程 零成本部署VLESS、Trojan免费节点  二合一  一键部署生成两协议订阅节点</h1>
+<div class="title-right">
+    <a href="https://MaryCHobbs.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/MaryCHobbs/MaryCHobbs.github.io/issues/11" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><p><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/5516e1b26432469dc1347f2e449a1f7d00b812cf2b0a28798263a65dd5307995/68747470733a2f2f7777772e796f75747562652e636f6d2f77617463683f763d656d45426d384777327749"><img src="https://camo.githubusercontent.com/5516e1b26432469dc1347f2e449a1f7d00b812cf2b0a28798263a65dd5307995/68747470733a2f2f7777772e796f75747562652e636f6d2f77617463683f763d656d45426d384777327749" alt="" data-canonical-src="https://www.youtube.com/watch?v=emEBm8Gw2wI" style="max-width: 100%;"></a></p>
+<p><strong>《部署教程说明》</strong></p>
+<p>通过Cloudflare零成本部署 <strong>VLESS/Trojan</strong> 免费节点！一键部署永久免部署(<strong>解决修改或设置变量自动部署出现1101错误问题</strong>),最新版本可以实现 <strong>VLESS/Trojan合成一套部署生成两类型节点</strong> 、 <strong>0变量设置</strong> 、 <strong>解决IP跳动</strong> 、并可以 <strong>优选IP区域</strong> 指定 <strong>优选反代IP区域</strong> 实现固定优选IP的落地IP,实现解锁ChatGPT、Netflix、TikTok等网站，还能轻松观看4K视频，永久免费。教程简单易懂，适合所有人，赶紧上手试试吧！</p>
+<p><a href="https://youtube.com/@am_clubs?sub_confirmation=1" rel="nofollow">【YouTube频道】 |</a> <a href="https://t.me/am_clubs" rel="nofollow">【Telegram频道】 |</a> <a href="https://github.com/amclubs">【GitHub仓库】</a></p>
+<blockquote>
+<p><strong>💡优势</strong> ： <strong>无限流量</strong>,再也不用担心流量不够用,全免费不用VPS就可以部署。</p>
+</blockquote>
+<ul>
+<li>VLESS/Trojan二合一节点项目地址： <a href="https://github.com/amclubs/am-cf-tunnel">https://github.com/amclubs/am-cf-tunnel</a></li>
+<li>Trojan免费节点项目地址： <a href="https://github.com/amclubs/am-cf-trojan">https://github.com/amclubs/am-cf-trojan</a></li>
+</ul>
+<h2>一、需要准备的前提资料</h2>
+<h3>1、注册免费cloudflare帐号(邮箱就可以免费注册)</h3>
+<ul>
+<li>注册地址： <a href="https://cloudflare.com/" rel="nofollow">https://cloudflare.com</a> <a href="https://youtu.be/ITeuSbHVQ2E" rel="nofollow">[点击观看视频教程]</a></li>
+</ul>
+<h3>2、注册免费域名 点击观看所有免费域名视频教程</h3>
+<h3>3、订阅工具 点击观看使用视频教程</h3>
+<p>👉 <a href="https://t.me/AM_CLUBS" rel="nofollow">点击加入TG群 AM科技｜分享交流群</a> 发送关键字 <strong>工具</strong> 获取下载</p>
+<h3>4、Cloudflare标准 端口 知识 点击观看优选IP视频教程</h3>
+<ul>
+<li>80系端口(HTTP)：80，8080，8880，2052，2082，2086，2095</li>
+<li>443系端口(HTTPS)：443，2053，2083，2087，2096，8443</li>
+<li><a href="https://ip.sb/" rel="nofollow">IP落地测试工具地址</a></li>
+</ul>
+<h2>二、开始部署Cloudflare免费节点</h2>
+<h3>一、Workers 部署方法 视频教程</h3>
+<p>点击展开/收起</p>
+<ol>
+<li>部署 Cloudflare Worker：
+<ul>
+<li>在 Cloudflare Worker 控制台中创建一个新的 Worker。</li>
+<li>将 <a href="https://github.com/amclubs/am-cf-tunnel/blob/main/_worker.js">_worker.js</a> 的内容粘贴到 Worker 编辑器中。</li>
+</ul>
+</li>
+<li>给 workers绑定 自定义域： <a href="https://www.youtube.com/playlist?list=PLGVQi7TjHKXZGODTvB8DEervrmHANQ1AR" rel="nofollow">免费域名申请教程</a>
+<ul>
+<li>在 workers控制台的 <code class="notranslate">设置</code> 选项卡 -&gt; 点击 <code class="notranslate">域和路由</code> -&gt; 右方点击 -&gt; <code class="notranslate">添加</code> -&gt; 选择 <code class="notranslate">自定义域</code> 。</li>
+<li>填入你已转入 CloudFlare 域名 (<a href="http://amclubss.com/" rel="nofollow">amclubss.com</a>) 解析服务的次级域名，例如:<code class="notranslate">vless.amclubss.com</code> 后 点击 <code class="notranslate">添加域</code> ，等待证书生效即可。</li>
+</ul>
+</li>
+<li>给UUID设置KV存储桶(可选项，推荐设置)：
+<ul>
+<li>在 CloudFlare主页的左边菜单的 <code class="notranslate"> 存储和数据库</code> 选项卡 -&gt; 展开选择点击 <code class="notranslate">KV</code> -&gt; 右方点击 -&gt; <code class="notranslate">创建</code> -&gt; 填入 <code class="notranslate">命名空间名称</code> (此名称自己命名) 后 -&gt; 点击 <code class="notranslate">添加</code> 。(此步已有可忽略)</li>
+<li>在 workers控制台的 <code class="notranslate">设置</code> 选项卡 -&gt; 点击 <code class="notranslate">绑定</code> -&gt; 右方点击 -&gt; <code class="notranslate">添加</code> -&gt; 选择 <code class="notranslate">KV 命名空间</code> -&gt; 变量名称 填入 <code class="notranslate">amclubs</code> (此名称固定不能变) -&gt; KV 命名空间 选择 在上面创建的 <code class="notranslate">命名空间名称</code> 后 -&gt; 右下方点击 <code class="notranslate">部署</code> 。</li>
+</ul>
+</li>
+<li>访问订阅内容：
+<ul>
+<li>访问 <code class="notranslate">https://[YOUR-WORKERS-URL]/[UUID]</code> 即可获取订阅内容（默认UUID是：d0298536-d670-4045-bbb1-ddd5ea68683e）。</li>
+<li>例如 <code class="notranslate">https://vless.amclubss.com/d0298536-d670-4045-bbb1-ddd5ea68683e?sub</code> 就是你的通用自适应订阅地址(Quantumult X、Clash、singbox、小火箭、v2rayN、v2rayU、surge、PassWall、SSR+、Karing等)。</li>
+<li>例如 <code class="notranslate">https://vless.amclubss.com/d0298536-d670-4045-bbb1-ddd5ea68683e?base64</code> Base64订阅格式，适用PassWall,SSR+等。</li>
+<li>例如 <code class="notranslate">https://vless.amclubss.com/d0298536-d670-4045-bbb1-ddd5ea68683e?clash</code> Clash订阅格式，适用OpenClash等。</li>
+<li>例如 <code class="notranslate">https://vless.amclubss.com/d0298536-d670-4045-bbb1-ddd5ea68683e?singbox</code> singbox订阅格式，适用singbox等。</li>
+<li>例如 <code class="notranslate">https://vless.amclubss.com/d0298536-d670-4045-bbb1-ddd5ea68683e?sub&amp;IP_URL=https://raw.githubusercontent.com/amclubs/am-cf-tunnel/main/ipUrl.txt</code> 自动义变量等参数。</li>
+</ul>
+</li>
+<li>修改默认UUID变量，使用KV存储桶(可选项，推荐修改，防止别人用你节点)：
+<ul>
+<li>访问 <code class="notranslate">https://vless.amclubss.com/d0298536-d670-4045-bbb1-ddd5ea68683e/ui</code> 即可进入修改UUID页面</li>
+<li>在UUID页面UUID项 -&gt; 填入 <code class="notranslate">新的UUID</code> 后,<a href="https://1024tools.com/uuid" rel="nofollow">在线获取UUID</a> -&gt; 点击 <code class="notranslate">Save</code> 。</li>
+<li>保存成功后，原UUID已作废不能访问，用新UUID访问 <code class="notranslate">https://vless.amclubss.com/新的UUID</code> 即可获取订阅内容。</li>
+</ul>
+</li>
+</ol>
+<h3>二、Pages 上传 部署方法 最佳推荐!!! 视频教程</h3>
+<p>点击展开/收起</p>
+<ol>
+<li>部署 Cloudflare Pages：
+<ul>
+<li>下载 <a href="https://raw.githubusercontent.com/amclubs/am-cf-tunnel/main/_worker.js.zip" rel="nofollow">_worker.js.zip</a> 文件，并点上 Star!!!</li>
+<li>在 Cloudflare Pages 控制台中选择 <code class="notranslate">上传资产</code> 后，为你的项目取名后点击 <code class="notranslate">创建项目</code> ，然后上传你下载好的 <a href="https://raw.githubusercontent.com/amclubs/am-cf-tunnel/main/_worker.js.zip" rel="nofollow">_worker.js.zip</a> 文件后点击 <code class="notranslate">部署站点</code> 。</li>
+</ul>
+</li>
+<li>给 Pages绑定 CNAME自定义域：[无域名绑定Cloudflare部署视频教程]-&gt; <a href="https://youtu.be/wHJ6TJiCF0s" rel="nofollow">免费域名教程1</a> <a href="https://youtu.be/yEF1YoLVmig" rel="nofollow">免费域名教程2</a> <a href="https://www.youtube.com/watch?v=XS0EgqckUKo&amp;t=320s" rel="nofollow">免费域名教程3</a>
+<ul>
+<li>在 Pages控制台的 <code class="notranslate">自定义域</code> 选项卡，下方点击 <code class="notranslate">设置自定义域</code> 。</li>
+<li>填入你的自定义次级域名，注意不要使用你的根域名，例如：<br>
+您分配到的域名是 <code class="notranslate">amclubss.com</code> ，则添加自定义域填入 <code class="notranslate">vless.amclubss.com</code> 即可，点击 <code class="notranslate">激活域</code> 即可。</li>
+</ul>
+</li>
+<li>给UUID设置KV存储桶(可选项，推荐设置)：
+<ul>
+<li>在 CloudFlare主页的左边菜单的 <code class="notranslate"> 存储和数据库</code> 选项卡 -&gt; 展开选择点击 <code class="notranslate">KV</code> -&gt; 右方点击 -&gt; <code class="notranslate">创建</code> -&gt; 填入 <code class="notranslate">命名空间名称</code> (此名称自己命名) 后 -&gt; 点击 <code class="notranslate">添加</code> 。(此步已有可忽略)</li>
+<li>在 workers控制台的 <code class="notranslate">设置</code> 选项卡 -&gt; 点击 <code class="notranslate">绑定</code> -&gt; 右方点击 -&gt; <code class="notranslate">添加</code> -&gt; 选择 <code class="notranslate">KV 命名空间</code> -&gt; 变量名称 填入 <code class="notranslate">amclubs</code> (此名称固定不能变) -&gt; KV 命名空间 选择 在上面创建的 <code class="notranslate">命名空间名称</code> 后 -&gt; 右下方点击 <code class="notranslate">部署</code> 。</li>
+<li>在 <code class="notranslate">设置</code> 选项卡，在右上角点击 <code class="notranslate">创建部署</code> 后，重新上传 <a href="https://raw.githubusercontent.com/amclubs/am-cf-tunnel/main/_worker.js.zip" rel="nofollow">_worker.js.zip</a> 文件后点击 <code class="notranslate">保存并部署</code> 即可。</li>
+</ul>
+</li>
+<li>访问订阅内容：
+<ul>
+<li>访问 <code class="notranslate">https://[YOUR-WORKERS-URL]/[UUID]</code> 即可获取订阅内容（默认UUID是：d0298536-d670-4045-bbb1-ddd5ea68683e）。</li>
+<li>例如 <code class="notranslate">https://vless.amclubss.com/d0298536-d670-4045-bbb1-ddd5ea68683e?sub</code> 就是你的通用自适应订阅地址(Quantumult X、Clash、singbox、小火箭、v2rayN、v2rayU、surge、PassWall、SSR+、Karing等)。</li>
+<li>例如 <code class="notranslate">https://vless.amclubss.com/d0298536-d670-4045-bbb1-ddd5ea68683e?base64</code> Base64订阅格式，适用PassWall,SSR+等。</li>
+<li>例如 <code class="notranslate">https://vless.amclubss.com/d0298536-d670-4045-bbb1-ddd5ea68683e?clash</code> Clash订阅格式，适用OpenClash等。</li>
+<li>例如 <code class="notranslate">https://vless.amclubss.com/d0298536-d670-4045-bbb1-ddd5ea68683e?singbox</code> singbox订阅格式，适用singbox等。</li>
+<li>例如 <code class="notranslate">https://vless.amclubss.com/d0298536-d670-4045-bbb1-ddd5ea68683e?sub&amp;IP_URL=https://raw.githubusercontent.com/amclubs/am-cf-tunnel/main/ipUrl.txt</code> 自动义变量等参数。</li>
+</ul>
+</li>
+<li>修改默认UUID变量，使用KV存储桶(可选项，推荐修改，防止别人用你节点)：
+<ul>
+<li>访问 <code class="notranslate">https://vless.amclubss.com/d0298536-d670-4045-bbb1-ddd5ea68683e/ui</code> 即可进入修改UUID页面</li>
+<li>在UUID页面UUID项 -&gt; 填入 <code class="notranslate">新的UUID</code> 后,<a href="https://1024tools.com/uuid" rel="nofollow">在线获取UUID</a> -&gt; 点击 <code class="notranslate">Save</code> 。</li>
+<li>保存成功后，原UUID已作废不能访问，用新UUID访问 <code class="notranslate">https://vless.amclubss.com/新的UUID</code> 即可获取订阅内容。</li>
+</ul>
+</li>
+</ol>
+<h3>三、Pages GitHub 部署方法 视频教程</h3>
+<p>点击展开/收起</p>
+<ol>
+<li>部署 Cloudflare Pages：
+<ul>
+<li>在 Github 上先 Fork 本项目，并点上 Star!!!</li>
+<li>在 Cloudflare Pages 控制台中选择 <code class="notranslate">连接到 Git</code> 后，选中 <code class="notranslate">am-cf-tunnel</code> 项目后点击 <code class="notranslate">开始设置</code> 。</li>
+<li>在 <code class="notranslate">设置构建和部署</code> 页面下方，后点击 <code class="notranslate">保存并部署</code> 即可。</li>
+</ul>
+</li>
+<li>给 Pages绑定 CNAME自定义域：[无域名绑定Cloudflare部署视频教程]-&gt; <a href="https://youtu.be/wHJ6TJiCF0s" rel="nofollow">免费域名教程1</a> <a href="https://youtu.be/yEF1YoLVmig" rel="nofollow">免费域名教程2</a> <a href="https://www.youtube.com/watch?v=XS0EgqckUKo&amp;t=320s" rel="nofollow">免费域名教程3</a>
+<ul>
+<li>在 Pages控制台的 <code class="notranslate">自定义域</code> 选项卡，下方点击 <code class="notranslate">设置自定义域</code> 。</li>
+<li>填入你的自定义次级域名，注意不要使用你的根域名，例如：<br>
+您分配到的域名是 <code class="notranslate">amclubss.com</code> ，则添加自定义域填入 <code class="notranslate">vless.amclubss.com</code> 即可，点击 <code class="notranslate">激活域</code> 即可。</li>
+</ul>
+</li>
+<li>给UUID设置KV存储桶(可选项，推荐设置)：
+<ul>
+<li>在 CloudFlare主页的左边菜单的 <code class="notranslate"> 存储和数据库</code> 选项卡 -&gt; 展开选择点击 <code class="notranslate">KV</code> -&gt; 右方点击 -&gt; <code class="notranslate">创建</code> -&gt; 填入 <code class="notranslate">命名空间名称</code> (此名称自己命名) 后 -&gt; 点击 <code class="notranslate">添加</code> 。(此步已有可忽略)</li>
+<li>在 workers控制台的 <code class="notranslate">设置</code> 选项卡 -&gt; 点击 <code class="notranslate">绑定</code> -&gt; 右方点击 -&gt; <code class="notranslate">添加</code> -&gt; 选择 <code class="notranslate">KV 命名空间</code> -&gt; 变量名称 填入 <code class="notranslate">amclubs</code> (此名称固定不能变) -&gt; KV 命名空间 选择 在上面创建的 <code class="notranslate">命名空间名称</code> 后 -&gt; 右下方点击 <code class="notranslate">部署</code> 。</li>
+<li>在 <code class="notranslate">设置</code> 选项卡，在右上角点击 <code class="notranslate">创建部署</code> 后，重新选择 <code class="notranslate">部署</code> 即可。</li>
+</ul>
+</li>
+<li>访问订阅内容：
+<ul>
+<li>访问 <code class="notranslate">https://[YOUR-WORKERS-URL]/[UUID]</code> 即可获取订阅内容（默认UUID是：d0298536-d670-4045-bbb1-ddd5ea68683e）。</li>
+<li>例如 <code class="notranslate">https://vless.amclubss.com/d0298536-d670-4045-bbb1-ddd5ea68683e?sub</code> 就是你的通用自适应订阅地址(Quantumult X、Clash、singbox、小火箭、v2rayN、v2rayU、surge、PassWall、SSR+、Karing等)。</li>
+<li>例如 <code class="notranslate">https://vless.amclubss.com/d0298536-d670-4045-bbb1-ddd5ea68683e?base64</code> Base64订阅格式，适用PassWall,SSR+等。</li>
+<li>例如 <code class="notranslate">https://vless.amclubss.com/d0298536-d670-4045-bbb1-ddd5ea68683e?clash</code> Clash订阅格式，适用OpenClash等。</li>
+<li>例如 <code class="notranslate">https://vless.amclubss.com/d0298536-d670-4045-bbb1-ddd5ea68683e?singbox</code> singbox订阅格式，适用singbox等。</li>
+<li>例如 <code class="notranslate">https://vless.amclubss.com/d0298536-d670-4045-bbb1-ddd5ea68683e?sub&amp;IP_URL=https://raw.githubusercontent.com/amclubs/am-cf-tunnel/main/ipUrl.txt</code> 自动义变量等参数。</li>
+</ul>
+</li>
+<li>修改默认UUID变量，使用KV存储桶(可选项，推荐修改，防止别人用你节点)：
+<ul>
+<li>访问 <code class="notranslate">https://vless.amclubss.com/d0298536-d670-4045-bbb1-ddd5ea68683e/ui</code> 即可进入修改UUID页面</li>
+<li>在UUID页面UUID项 -&gt; 填入 <code class="notranslate">新的UUID</code> 后,<a href="https://1024tools.com/uuid" rel="nofollow">在线获取UUID</a> -&gt; 点击 <code class="notranslate">Save</code> 。</li>
+<li>保存成功后，原UUID已作废不能访问，用新UUID访问 <code class="notranslate">https://vless.amclubss.com/新的UUID</code> 即可获取订阅内容。</li>
+</ul>
+</li>
+</ol>
+<h2>四、变量说明 视频教程</h2>
+<markdown-accessiblity-table><table role="table">
+<thead>
+<tr>
+<th>变量名</th>
+<th>示例</th>
+<th>必填</th>
+<th>备注</th>
+<th>YT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UUID</td>
+<td>d0298536-d670-4045-bbb1-ddd5ea68683e（默认）</td>
+<td>✅</td>
+<td>支持Cloudflare的KV存储桶设置 <a href="https://1024tools.com/uuid" rel="nofollow">在线获取UUID</a> 如果是Trojan节点的变量是：PASSWORD</td>
+<td></td>
+</tr>
+<tr>
+<td>PROT_TYPE</td>
+<td>默认空</td>
+<td>❌</td>
+<td>默认空,就是生成vless和trojan节点，vless(只生成vless节点)，trojan(只生成trojan节点)</td>
+<td></td>
+</tr>
+<tr>
+<td>IP_URL</td>
+<td><a href="https://raw.githubusercontent.com/amclubs/am-cf-tunnel/main/ipUrl.txt" rel="nofollow">https://raw.github…/ipUrl.txt</a></td>
+<td>❌</td>
+<td>（推荐）优选(ipv4、ipv6、域名、API)地址(支持多个之间<code class="notranslate">,</code>或 换行 作间隔)，支持文件连接后里带PROXYIP参数，可以实现不同区域优先IP使用不同的PROXYIP固定区域，解决IP乱跳问题</td>
+<td><a href="https://www.youtube.com/watch?v=4fcyJjstFdg&amp;t=349s" rel="nofollow">教程</a></td>
+</tr>
+<tr>
+<td>IP_URL_TXT</td>
+<td><a href="https://raw.githubusercontent.com/amclubs/am-cf-tunnel/main/ipv4.txt" rel="nofollow">https://raw.github…/ipv4.txt</a></td>
+<td>❌</td>
+<td>（不推荐）优选ipv4、ipv6、域名、API地址(支持多个之间<code class="notranslate">,</code>或 换行 作间隔)</td>
+<td><a href="https://youtu.be/dzxezRV1v-o" rel="nofollow">教程</a> <a href="https://youtu.be/vX3U3FuuTT8" rel="nofollow">教程</a></td>
+</tr>
+<tr>
+<td>IP_URL_CSV</td>
+<td><a href="https://raw.githubusercontent.com/amclubs/am-cf-tunnel/main/ipv4.csv" rel="nofollow">https://raw.github…/ipv4.csv</a></td>
+<td>❌</td>
+<td>（不推荐）优选ipv4/6的IP测速结果(支持多元素, 元素之间使用<code class="notranslate">,</code>作间隔)</td>
+<td><a href="https://youtu.be/vX3U3FuuTT8" rel="nofollow">教程</a></td>
+</tr>
+<tr>
+<td>IP_LOCAL</td>
+<td><code class="notranslate">icook.hk:2053#官方优选域名</code></td>
+<td>❌</td>
+<td>（不推荐）本地优选域名/优选IP(支持多元素之间<code class="notranslate">,</code>或 换行 作间隔)</td>
+<td></td>
+</tr>
+<tr>
+<td>PROXYIP</td>
+<td><a href="http://proxyip.amclubs.kozow.com/" rel="nofollow">proxyip.amclubs.kozow.com</a>   或   <a href="https://raw.githubusercontent.com/amclubs/am-cf-tunnel/main/proxyip.txt" rel="nofollow">https://raw.github…/proxyip.txt</a></td>
+<td>❌</td>
+<td>访问CloudFlare的CDN代理节点(支持多PROXYIP, PROXYIP之间使用<code class="notranslate">,</code>或 换行 作间隔),支持端口设置默认443 如: <a href="http://proxyip.amclubs.kozow.com:2053/" rel="nofollow">proxyip.amclubs.kozow.com:2053</a> ，支持远程txt或csv文件</td>
+<td><a href="https://youtu.be/pKrlfRRB0gU" rel="nofollow">教程</a></td>
+</tr>
+<tr>
+<td>SOCKS5</td>
+<td>user:password@127.0.0.1:1080</td>
+<td>❌</td>
+<td>优先作为访问CFCDN站点的SOCKS5代理</td>
+<td><a href="https://youtu.be/Bw82BH_ecC4" rel="nofollow">教程</a></td>
+</tr>
+<tr>
+<td>DNS_RESOLVER_URL</td>
+<td><a href="https://cloudflare-dns.com/dns-query" rel="nofollow">https://cloudflare-dns.com/dns-query</a></td>
+<td>❌</td>
+<td>DNS解析获取作用，小白勿用</td>
+<td></td>
+</tr>
+<tr>
+<td>NO_TLS</td>
+<td>true/false</td>
+<td>❌</td>
+<td>默认false,是否开启TLS系列端口，只有workers部署才可以使非用TLS系列端口</td>
+<td></td>
+</tr>
+<tr>
+<td>SL</td>
+<td>5</td>
+<td>❌</td>
+<td><code class="notranslate">CSV</code> 文件里的测速结果满足速度下限</td>
+<td></td>
+</tr>
+<tr>
+<td>SUB_CONFIG</td>
+<td><a href="https://raw.githubusercontent.com/amclubs/ACL4SSR/main/Clash/config/ACL4SSR_Online_Full_MultiMode.ini" rel="nofollow">https://raw.github…/ACL4SSR_Online_Mini.ini</a></td>
+<td>❌</td>
+<td>clash、singbox等 订阅转换配置文件</td>
+<td></td>
+</tr>
+<tr>
+<td>SUB_CONVERTER</td>
+<td><a href="http://url.v1.mk/" rel="nofollow">url.v1.mk</a></td>
+<td>❌</td>
+<td>clash、singbox等 订阅转换后端的api地址</td>
+<td></td>
+</tr>
+<tr>
+<td>SUB_NAME</td>
+<td>AM科技</td>
+<td>❌</td>
+<td>订阅名称</td>
+<td></td>
+</tr>
+<tr>
+<td>CF_EMAIL</td>
+<td><a href="https://vercel.amclubss.com/" rel="nofollow">test@gmail.com</a></td>
+<td>❌</td>
+<td>CF账户邮箱(要和 <code class="notranslate">CF_KEY</code> 同时填才生效, 订阅信息将显示请求使用量, 小白别用)</td>
+<td></td>
+</tr>
+<tr>
+<td>CF_KEY</td>
+<td>c6a944b5c9c18c235288bced8b85e</td>
+<td>❌</td>
+<td>CF账户Global API Key(要和 <code class="notranslate">CF_EMAIL</code> 同时填才生效, 订阅信息将显示请求使用量, 小白别用)</td>
+<td></td>
+</tr>
+<tr>
+<td>TG_TOKEN</td>
+<td>6823456:XXXXXXX0qExVUhHDAbXXXqWXgBA</td>
+<td>❌</td>
+<td>发送TG通知的机器人token</td>
+<td></td>
+</tr>
+<tr>
+<td>TG_ID</td>
+<td>6946912345</td>
+<td>❌</td>
+<td>接收TG通知的账户数字ID</td>
+<td></td>
+</tr>
+</tbody>
+</table></markdown-accessiblity-table>
+<h2>五、已适配订阅工具 点击进入视频教程 点进进入karing视频教程</h2>
+<ul>
+<li>Mac（苹果电脑）
+<ul>
+<li><a href="https://github.com/yanue/V2rayU/releases">v2rayU</a> | <a href="https://github.com/clash-verge-rev/clash-verge-rev/releases">clash-verge-rev</a> | <a href="https://apps.apple.com/us/app/quantumult-x/id1443988620" rel="nofollow">Quantumult X</a> | <a href="https://apps.apple.com/us/app/shadowrocket/id932747118" rel="nofollow">小火箭</a> | <a href="https://apps.apple.com/us/app/surge-5/id1442620678" rel="nofollow">surge</a> | <a href="https://karing.app/download" rel="nofollow">karing</a> | <a href="https://github.com/SagerNet/sing-box/releases">sing-box</a> | <a href="https://github.com/keiko233/clash-nyanpasu/releases">Clash Nyanpasu</a> | <a href="https://github.com/vernesong/OpenClash/releases">openclash</a> | <a href="https://github.com/hiddify/hiddify-next/releases">Hiddify</a></li>
+</ul>
+</li>
+<li>Win（win系统电脑）
+<ul>
+<li><a href="https://github.com/2dust/v2rayN/releases">v2rayN</a> | <a href="https://github.com/clash-verge-rev/clash-verge-rev/releases">clash-verge-rev</a> | <a href="https://github.com/SagerNet/sing-box/releases">sing-box</a> | <a href="https://github.com/keiko233/clash-nyanpasu/releases">Clash Nyanpasu</a> | <a href="https://github.com/vernesong/OpenClash/releases">openclash</a> | <a href="https://karing.app/download" rel="nofollow">karing</a> | <a href="https://github.com/hiddify/hiddify-next/releases">Hiddify</a></li>
+</ul>
+</li>
+<li>IOS（苹果手机）
+<ul>
+<li><a href="https://github.com/clash-verge-rev/clash-verge-rev/releases">clash-verge-rev</a> | <a href="https://apps.apple.com/us/app/quantumult-x/id1443988620" rel="nofollow">Quantumult X</a> | <a href="https://apps.apple.com/us/app/shadowrocket/id932747118" rel="nofollow">小火箭</a> | <a href="https://apps.apple.com/us/app/surge-5/id1442620678" rel="nofollow">surge</a> | <a href="https://github.com/SagerNet/sing-box/releases">sing-box</a> | <a href="https://github.com/keiko233/clash-nyanpasu/releases">Clash Nyanpasu</a> | <a href="https://karing.app/download" rel="nofollow">karing</a> | <a href="https://github.com/hiddify/hiddify-next/releases">Hiddify</a></li>
+</ul>
+</li>
+<li>Android（安卓手机）
+<ul>
+<li><a href="https://github.com/2dust/v2rayNG/releases">v2rayNG</a> | <a href="https://github.com/clash-verge-rev/clash-verge-rev/releases">clash-verge-rev</a> | <a href="https://github.com/SagerNet/sing-box/releases">sing-box</a> | <a href="https://github.com/keiko233/clash-nyanpasu/releases">Clash Nyanpasu</a> | <a href="https://karing.app/download" rel="nofollow">karing</a> | <a href="https://github.com/hiddify/hiddify-next/releases">Hiddify</a></li>
+</ul>
+</li>
+</ul></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://MaryCHobbs.github.io">迷茫的小爬虫博客</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if(""!=""){
+    var startSite=new Date("");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","MaryCHobbs/MaryCHobbs.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+
+
+</html>
