@@ -130,13 +130,13 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <li>从 <a href="https://nodejs.org/en" rel="nofollow">Node 官网</a> 下载适合自己系统的版本。</li>
 <li>完成安装，Windows电脑建议使用默认目录 <code class="notranslate">C:/Program Files/nodejs/</code> ，苹果电脑无所谓。</li>
 <li>验证安装成功，在命令行中输入 <code class="notranslate">node -v</code> 检查版本信息。<br>
-<a href="https://13fe9ff.webp.li/2024/10/2a18b0579664e643e4363fc93d47c842.png" rel="nofollow"><img src="https://camo.githubusercontent.com/51b50e046485bddbd7c582ed460895374a6b908103511e5ea88bb7e2c3e95ff2/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f32613138623035373936363465363433653433363366633933643437633834322e706e67" alt="示例图片" data-canonical-src="https://13fe9ff.webp.li/2024/10/2a18b0579664e643e4363fc93d47c842.png" style="max-width: 100%;"></a></li>
+<a href="https://13fe9ff.webp.li/2024/10/2a18b0579664e643e4363fc93d47c842.png" rel="nofollow"><img src="https://camo.githubusercontent.com/51b50e046485bddbd7c582ed460895374a6b908103511e5ea88bb7e2c3e95ff2/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f32613138623035373936363465363433653433363366633933643437633834322e706e67" alt="示例图片" data-canonical-src="https://13fe9ff.webp.li/2024/10/2a18b0579664e643e4363fc93d47c842.png" style="max-width: 100%; height: auto;"></a></li>
 <li>苹果用户可通过右键文件夹，选择“服务”，新建终端窗口以便操作。</li>
 </ol>
 <h3>2.2. 安装 Git</h3>
 <ol>
 <li>从 <a href="https://git-scm.com/downloads" rel="nofollow">Git 官网</a> 下载适配的 Git 版本。<br>
-<a href="https://13fe9ff.webp.li/2024/10/3957eda9a3c4ec8422eecc672b059d42.png" rel="nofollow"><img src="https://camo.githubusercontent.com/b46fc2456c0e08e3a15a438dea840bcbc410509ffb91f2b710d04763881d0c58/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f33393537656461396133633465633834323265656363363732623035396434322e706e67" alt="示例图片" data-canonical-src="https://13fe9ff.webp.li/2024/10/3957eda9a3c4ec8422eecc672b059d42.png" style="max-width: 100%;"></a></li>
+<a href="https://13fe9ff.webp.li/2024/10/3957eda9a3c4ec8422eecc672b059d42.png" rel="nofollow"><img src="https://camo.githubusercontent.com/b46fc2456c0e08e3a15a438dea840bcbc410509ffb91f2b710d04763881d0c58/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f33393537656461396133633465633834323265656363363732623035396434322e706e67" alt="示例图片" data-canonical-src="https://13fe9ff.webp.li/2024/10/3957eda9a3c4ec8422eecc672b059d42.png" style="max-width: 100%; height: auto;"></a></li>
 <li>Windows 用户可使用默认目录安装 Git，Mac 用户则按提示在终端操作。</li>
 <li>验证安装完毕后，Windows 用户会在开始菜单中看到 <code class="notranslate">Git Bash</code> 等应用。</li>
 </ol>
@@ -152,43 +152,43 @@ git config --global --list</pre></div>
 
 git config --global user.email <span class="pl-s"><span class="pl-pds">"</span>你的邮箱<span class="pl-pds">"</span></span></pre></div>
 <p>通过 <code class="notranslate">git config -l</code> 验证是否成功。<br>
-<a href="https://13fe9ff.webp.li/2024/10/1d37926686d18e0ac468ce6d00c07a50.png" rel="nofollow"><img src="https://camo.githubusercontent.com/c542ab7d892a64e5ccb8e70c11cde0a4c12aa0c836b96696adb2a0a9ed520718/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f31643337393236363836643138653061633436386365366430306330376135302e706e67" alt="abd" data-canonical-src="https://13fe9ff.webp.li/2024/10/1d37926686d18e0ac468ce6d00c07a50.png" style="max-width: 100%;"></a></p>
+<a href="https://13fe9ff.webp.li/2024/10/1d37926686d18e0ac468ce6d00c07a50.png" rel="nofollow"><img src="https://camo.githubusercontent.com/c542ab7d892a64e5ccb8e70c11cde0a4c12aa0c836b96696adb2a0a9ed520718/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f31643337393236363836643138653061633436386365366430306330376135302e706e67" alt="abd" data-canonical-src="https://13fe9ff.webp.li/2024/10/1d37926686d18e0ac468ce6d00c07a50.png" style="max-width: 100%; height: auto;"></a></p>
 <h4>3.2. 配置公钥连接 Github</h4>
 <ol>
 <li>生成 SSH 公钥：</li>
 </ol>
 <div class="highlight highlight-source-shell"><pre class="notranslate">bashssh-keygen -t rsa -C <span class="pl-s"><span class="pl-pds">"</span>你的邮箱<span class="pl-pds">"</span></span></pre></div>
 <p>一路回车生成密钥，进入 <code class="notranslate">.ssh</code> 文件夹复制 <code class="notranslate">id_rsa.pub</code> 公钥内容，配置到 Github 的 SSH 设置中。<br>
-<a href="https://13fe9ff.webp.li/2024/10/d2ec687d4c21887ffc96e96687630d7d.png" rel="nofollow"><img src="https://camo.githubusercontent.com/99c6f76512be9a2bac07ee3de0119fa35325001565d9506809b5d269ab5b78f7/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f64326563363837643463323138383766666339366539363638373633306437642e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/d2ec687d4c21887ffc96e96687630d7d.png" style="max-width: 100%;"></a></p>
+<a href="https://13fe9ff.webp.li/2024/10/d2ec687d4c21887ffc96e96687630d7d.png" rel="nofollow"><img src="https://camo.githubusercontent.com/99c6f76512be9a2bac07ee3de0119fa35325001565d9506809b5d269ab5b78f7/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f64326563363837643463323138383766666339366539363638373633306437642e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/d2ec687d4c21887ffc96e96687630d7d.png" style="max-width: 100%; height: auto;"></a></p>
 <h2>3.在苹果电脑上，如果你知道文件的路径，可以通过以下几种方式快速找到文件：</h2>
 <p>打开Finder。<br>
 按下 Command + Shift + G，在弹出的对话框中输入文件路径，然后按 Enter。这样可以直接跳转到该路径下的文件。<br>
-<a href="https://13fe9ff.webp.li/2024/10/1efba3fa54bedcba6059cc88a8daf717.png" rel="nofollow"><img src="https://camo.githubusercontent.com/0634c7ba953107a1f8e21b5f905429f6173ee03b9120dcae0b83faff6e4235ea/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f31656662613366613534626564636261363035396363383861386461663731372e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/1efba3fa54bedcba6059cc88a8daf717.png" style="max-width: 100%;"></a></p>
+<a href="https://13fe9ff.webp.li/2024/10/1efba3fa54bedcba6059cc88a8daf717.png" rel="nofollow"><img src="https://camo.githubusercontent.com/0634c7ba953107a1f8e21b5f905429f6173ee03b9120dcae0b83faff6e4235ea/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f31656662613366613534626564636261363035396363383861386461663731372e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/1efba3fa54bedcba6059cc88a8daf717.png" style="max-width: 100%; height: auto;"></a></p>
 <h3>在windows电脑上：</h3>
 <p>打开C盘下用户文件夹下的.ssh的文件夹，会看到以下文件<br>
 id_rsa 私钥<br>
 id_rsa.pub 公钥</p>
 <p>找到公钥匙，并复制，打开GitHub开始配置<br>
-<a href="https://13fe9ff.webp.li/2024/10/0557c8ce136c6e43f4c1541d31beba62.png" rel="nofollow"><img src="https://camo.githubusercontent.com/e12b36ed0a941776c6bafe3e13c798016627245f7b9de8acfb4e3438872ff686/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f30353537633863653133366336653433663463313534316433316265626136322e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/0557c8ce136c6e43f4c1541d31beba62.png" style="max-width: 100%;"></a></p>
+<a href="https://13fe9ff.webp.li/2024/10/0557c8ce136c6e43f4c1541d31beba62.png" rel="nofollow"><img src="https://camo.githubusercontent.com/e12b36ed0a941776c6bafe3e13c798016627245f7b9de8acfb4e3438872ff686/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f30353537633863653133366336653433663463313534316433316265626136322e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/0557c8ce136c6e43f4c1541d31beba62.png" style="max-width: 100%; height: auto;"></a></p>
 <ol>
 <li>将 SSH KEY 配置到 GitHub<br>
 进入github，点击右上角头像 选择settings，进入设置页后选择 SSH and GPG keys，名字随便起，公钥填到Key那一栏。<br>
-<a href="https://13fe9ff.webp.li/2024/10/84b777a4f0b9a8a290e1472087ce30e2.png" rel="nofollow"><img src="https://camo.githubusercontent.com/05aaf32d0e1eddaf668bc87bcf74ca50214744a51b9590e1360b670c55322423/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f38346237373761346630623961386132393065313437323038376365333065322e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/84b777a4f0b9a8a290e1472087ce30e2.png" style="max-width: 100%;"></a></li>
+<a href="https://13fe9ff.webp.li/2024/10/84b777a4f0b9a8a290e1472087ce30e2.png" rel="nofollow"><img src="https://camo.githubusercontent.com/05aaf32d0e1eddaf668bc87bcf74ca50214744a51b9590e1360b670c55322423/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f38346237373761346630623961386132393065313437323038376365333065322e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/84b777a4f0b9a8a290e1472087ce30e2.png" style="max-width: 100%; height: auto;"></a></li>
 </ol>
-<p><a href="https://13fe9ff.webp.li/2024/10/ab0ad8dba8ff5ace69b12e9ffa5d8b9d.png" rel="nofollow"><img src="https://camo.githubusercontent.com/38e93aee386df182432b826a9e44d10fccb3ded85cea17d3a26c85d4a1235f28/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f61623061643864626138666635616365363962313265396666613564386239642e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/ab0ad8dba8ff5ace69b12e9ffa5d8b9d.png" style="max-width: 100%;"></a></p>
+<p><a href="https://13fe9ff.webp.li/2024/10/ab0ad8dba8ff5ace69b12e9ffa5d8b9d.png" rel="nofollow"><img src="https://camo.githubusercontent.com/38e93aee386df182432b826a9e44d10fccb3ded85cea17d3a26c85d4a1235f28/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f61623061643864626138666635616365363962313265396666613564386239642e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/ab0ad8dba8ff5ace69b12e9ffa5d8b9d.png" style="max-width: 100%; height: auto;"></a></p>
 <ol>
 <li>测试连接：</li>
 </ol>
 <div class="highlight highlight-source-shell"><pre class="notranslate">bashssh -T git@github.com</pre></div>
 <p>第一次连接会提示Are you sure you want to continue connecting (yes/no/[fingerprint])?，输入yes即可<br>
-<a href="https://13fe9ff.webp.li/2024/10/db87e8d1e4767b675c03a907c06ecdda.png" rel="nofollow"><img src="https://camo.githubusercontent.com/f589259c1d33594ebe340def4d3b3077a0c50c96a0351bf92fad5458f36165d6/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f64623837653864316534373637623637356330336139303763303665636464612e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/db87e8d1e4767b675c03a907c06ecdda.png" style="max-width: 100%;"></a></p>
+<a href="https://13fe9ff.webp.li/2024/10/db87e8d1e4767b675c03a907c06ecdda.png" rel="nofollow"><img src="https://camo.githubusercontent.com/f589259c1d33594ebe340def4d3b3077a0c50c96a0351bf92fad5458f36165d6/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f64623837653864316534373637623637356330336139303763303665636464612e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/db87e8d1e4767b675c03a907c06ecdda.png" style="max-width: 100%; height: auto;"></a></p>
 <h4>3.3. 创建 GitHub.io 仓库</h4>
 <ol>
 <li>点击右上角的 <code class="notranslate">+</code> 按钮，选择新建仓库，命名格式为 <code class="notranslate">&lt;用户名&gt;.github.io</code> ，(注意：前缀必须为用户名)选择公开 <code class="notranslate">Public</code> 。</li>
 <li>点击 Creat repository 进行创建即可。<br>
-<a href="https://13fe9ff.webp.li/2024/10/aff632548c5c460783916a88a187e76a.png" rel="nofollow"><img src="https://camo.githubusercontent.com/dd9f6ed437f854087e9df581524d5db477176ee438fec880efe9a163cdc9aeb1/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f61666636333235343863356334363037383339313661383861313837653736612e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/aff632548c5c460783916a88a187e76a.png" style="max-width: 100%;"></a></li>
+<a href="https://13fe9ff.webp.li/2024/10/aff632548c5c460783916a88a187e76a.png" rel="nofollow"><img src="https://camo.githubusercontent.com/dd9f6ed437f854087e9df581524d5db477176ee438fec880efe9a163cdc9aeb1/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f61666636333235343863356334363037383339313661383861313837653736612e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/aff632548c5c460783916a88a187e76a.png" style="max-width: 100%; height: auto;"></a></li>
 </ol>
-<p><a href="https://13fe9ff.webp.li/2024/10/6a6a086ab644e9f9ac5820570686e62c.png" rel="nofollow"><img src="https://camo.githubusercontent.com/ed258cf73764ad29f5ce07d227c6a8f702fd0c983e8c5e47f1aee8a4cd8fbdf5/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f36613661303836616236343465396639616335383230353730363836653632632e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/6a6a086ab644e9f9ac5820570686e62c.png" style="max-width: 100%;"></a></p>
+<p><a href="https://13fe9ff.webp.li/2024/10/6a6a086ab644e9f9ac5820570686e62c.png" rel="nofollow"><img src="https://camo.githubusercontent.com/ed258cf73764ad29f5ce07d227c6a8f702fd0c983e8c5e47f1aee8a4cd8fbdf5/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f36613661303836616236343465396639616335383230353730363836653632632e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/6a6a086ab644e9f9ac5820570686e62c.png" style="max-width: 100%; height: auto;"></a></p>
 <h2>4. 初始化 Hexo 博客</h2>
 <ol>
 <li>创建文件夹保存博客源码：</li>
@@ -200,7 +200,7 @@ id_rsa.pub 公钥</p>
 </ol>
 <div class="highlight highlight-source-shell"><pre class="notranslate">bashnpm install -g hexo-cli <span class="pl-k">&amp;&amp;</span> hexo -v</pre></div>
 <p>出现此页面代表安装成功<br>
-<a href="https://13fe9ff.webp.li/2024/10/09dfd08bc762f761b61b4666ac383b99.png" rel="nofollow"><img src="https://camo.githubusercontent.com/cf05b816430148e760fcfd65fc29bff736194945771976e8f12f45d8b23d2668/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f30396466643038626337363266373631623631623436363661633338336239392e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/09dfd08bc762f761b61b4666ac383b99.png" style="max-width: 100%;"></a></p>
+<a href="https://13fe9ff.webp.li/2024/10/09dfd08bc762f761b61b4666ac383b99.png" rel="nofollow"><img src="https://camo.githubusercontent.com/cf05b816430148e760fcfd65fc29bff736194945771976e8f12f45d8b23d2668/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f30396466643038626337363266373631623631623436363661633338336239392e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/09dfd08bc762f761b61b4666ac383b99.png" style="max-width: 100%; height: auto;"></a></p>
 <ol>
 <li>初始化 Hexo 项目安装依赖：</li>
 </ol>
@@ -209,15 +209,15 @@ id_rsa.pub 公钥</p>
 <span class="pl-c1">cd</span> blog-demo
 
 npm i</pre></div>
-<p><a href="https://13fe9ff.webp.li/2024/10/d17588a07ad38a5285fc42d4c781f9cd.png" rel="nofollow"><img src="https://camo.githubusercontent.com/967ef5530258f4271d991ff4a101f089fd18d0ecc5912455a17f8c430d21cab1/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f64313735383861303761643338613532383566633432643463373831663963642e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/d17588a07ad38a5285fc42d4c781f9cd.png" style="max-width: 100%;"></a></p>
+<p><a href="https://13fe9ff.webp.li/2024/10/d17588a07ad38a5285fc42d4c781f9cd.png" rel="nofollow"><img src="https://camo.githubusercontent.com/967ef5530258f4271d991ff4a101f089fd18d0ecc5912455a17f8c430d21cab1/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f64313735383861303761643338613532383566633432643463373831663963642e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/d17588a07ad38a5285fc42d4c781f9cd.png" style="max-width: 100%; height: auto;"></a></p>
 <p>现在你的文件夹会有这些内容<br>
-<a href="https://13fe9ff.webp.li/2024/10/94f0f93b98c067b27d235830032d56ae.png" rel="nofollow"><img src="https://camo.githubusercontent.com/1dbb3fe80b659ae9fa46e39989b4254434d6cf4d590a8fc7cee66814c57661f1/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f39346630663933623938633036376232376432333538333030333264353661652e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/94f0f93b98c067b27d235830032d56ae.png" style="max-width: 100%;"></a></p>
+<a href="https://13fe9ff.webp.li/2024/10/94f0f93b98c067b27d235830032d56ae.png" rel="nofollow"><img src="https://camo.githubusercontent.com/1dbb3fe80b659ae9fa46e39989b4254434d6cf4d590a8fc7cee66814c57661f1/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f39346630663933623938633036376232376432333538333030333264353661652e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/94f0f93b98c067b27d235830032d56ae.png" style="max-width: 100%; height: auto;"></a></p>
 <ol>
 <li>启动项目并验证：</li>
 </ol>
 <div class="highlight highlight-source-shell"><pre class="notranslate">bashhexo cl <span class="pl-k">&amp;&amp;</span> hexo s</pre></div>
 <p>在浏览器中访问 <a href="http://localhost:4000/" rel="nofollow">http://localhost:4000/</a> 以查看效果。</p>
-<p><a href="https://13fe9ff.webp.li/2024/10/5f1f08bb49c8f8d7f63c0bee92e3587b.png" rel="nofollow"><img src="https://camo.githubusercontent.com/56a7b426f9306c612450692f6cbe63a2dab0194a6a84724651bebb655852491e/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f35663166303862623439633866386437663633633062656539326533353837622e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/5f1f08bb49c8f8d7f63c0bee92e3587b.png" style="max-width: 100%;"></a></p>
+<p><a href="https://13fe9ff.webp.li/2024/10/5f1f08bb49c8f8d7f63c0bee92e3587b.png" rel="nofollow"><img src="https://camo.githubusercontent.com/56a7b426f9306c612450692f6cbe63a2dab0194a6a84724651bebb655852491e/68747470733a2f2f313366653966662e776562702e6c692f323032342f31302f35663166303862623439633866386437663633633062656539326533353837622e706e67" alt="abm" data-canonical-src="https://13fe9ff.webp.li/2024/10/5f1f08bb49c8f8d7f63c0bee92e3587b.png" style="max-width: 100%; height: auto;"></a></p>
 <h2>5. 将静态博客挂载到 GitHub Pages</h2>
 <ol>
 <li>修改 <code class="notranslate">_config.yml</code> 文件，配置 <code class="notranslate">repository</code> 为你的 GitHub 地址，分支改为 <code class="notranslate">main</code> ：</li>
